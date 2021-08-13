@@ -293,11 +293,11 @@ const c = require("../lib/constants");
     file: c.FILE_SOURCES_LIST,
   });
 
-  await task({
-    sheet: c.SHEET_RESOURCES,
-    tabs: { resources: c.SHEET_RESOURCES_SHEET },
-    file: c.FILE_RESOURCES_ESSENTIALS,
-  });
+  // await task({
+  //   sheet: c.SHEET_RESOURCES,
+  //   tabs: { resources: c.SHEET_RESOURCES_SHEET },
+  //   file: c.FILE_RESOURCES_ESSENTIALS,
+  // });
 
   await task({
     sheet: c.SHEET,

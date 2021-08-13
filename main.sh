@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -eu
 
 repo_uri="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 remote_name="origin"
-main_branch="master"
+main_branch="main"
 gh_pages_branch="gh-pages"
 
 
@@ -40,7 +40,6 @@ node src/sheet-to-json_generic.js
 
 cp README.md tmp/
 cp -r documentation/ tmp/
-cp -r projects/ tmp/
 
 node src/sheets-to-csv.js
 

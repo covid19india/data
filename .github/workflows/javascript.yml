@@ -4,15 +4,15 @@ on:
 #   schedule:
 #     # every 20 minutes the job will run
 #     - cron: "*/15 * * * *"
-#   push:
-#     branches:
-#       - master
+  push:
+    branches:
+      - main
   repository_dispatch:
     types: [my-event]
 
 jobs:
   update-json-data:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     timeout-minutes: 19
 
     steps:
@@ -78,7 +78,7 @@ jobs:
       - name: show job status
         if: always()
         run: |
-          git checkout master
+          git checkout main
           node lib/notify_tg.js $status
         env:
           status: ${{job.status}}
