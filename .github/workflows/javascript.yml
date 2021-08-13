@@ -1,0 +1,99 @@
+name: Sheet to Json Workflow
+
+on:
+#   schedule:
+#     # every 20 minutes the job will run
+#     - cron: "*/15 * * * *"
+#   push:
+#     branches:
+#       - master
+  repository_dispatch:
+    types: [my-event]
+
+jobs:
+  update-json-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 19
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
+      - name: Cache node modules
+        uses: actions/cache@v1
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: push
+        run: |
+          bash ./main.sh 2>> /tmp/apidata_err
+          echo "the job completed"
+        env:
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+          SHEET_ID_v1: ${{ secrets.SHEET_ID_v1 }}
+          SHEET_ID_v2: ${{ secrets.SHEET_ID_v2 }}
+          SHEET_ID_v3: ${{ secrets.SHEET_ID_v3 }}
+          SHEET_ID_v4: ${{ secrets.SHEET_ID_v4 }}
+          SHEET_ID_v5: ${{ secrets.SHEET_ID_v5 }}
+          SHEET_ID_v6: ${{ secrets.SHEET_ID_v6 }}
+          SHEET_ID_v7: ${{ secrets.SHEET_ID_v7 }}
+          SHEET_ID_v8: ${{ secrets.SHEET_ID_v8 }}
+          SHEET_ID_v9: ${{ secrets.SHEET_ID_v9 }}
+          SHEET_ID_v10: ${{ secrets.SHEET_ID_v10 }}
+          SHEET_ID_v11: ${{ secrets.SHEET_ID_v11 }}
+          SHEET_ID_v12: ${{ secrets.SHEET_ID_v12 }}
+          SHEET_ID_v13: ${{ secrets.SHEET_ID_v13 }}
+          SHEET_ID_v14: ${{ secrets.SHEET_ID_v14 }}
+          SHEET_ID_v15: ${{ secrets.SHEET_ID_v15 }}
+          SHEET_ID_v16: ${{ secrets.SHEET_ID_v16 }}
+          SHEET_ID_v17: ${{ secrets.SHEET_ID_v17 }}
+          SHEET_ID_v18: ${{ secrets.SHEET_ID_v18 }}
+          SHEET_ID_v19: ${{ secrets.SHEET_ID_v19 }}
+          SHEET_ID_v20: ${{ secrets.SHEET_ID_v20 }}
+          SHEET_ID_v21: ${{ secrets.SHEET_ID_v21 }}
+          SHEET_ID_v22: ${{ secrets.SHEET_ID_v22 }}
+          SHEET_ID_v23: ${{ secrets.SHEET_ID_v23 }}
+          SHEET_ID_v24: ${{ secrets.SHEET_ID_v24 }}
+          SHEET_ID_v25: ${{ secrets.SHEET_ID_v25 }}
+          SHEET_ID_v26: ${{ secrets.SHEET_ID_v26 }}
+          SHEET_ID_v27: ${{ secrets.SHEET_ID_v27 }}
+          SHEET_ID_v28: ${{ secrets.SHEET_ID_v28 }}
+          SHEET_ID_v29: ${{ secrets.SHEET_ID_v29 }}
+          SHEET_ID_v30: ${{ secrets.SHEET_ID_v30 }}
+          SHEET_ID_v31: ${{ secrets.SHEET_ID_v31 }}
+          SHEET_ID_v32: ${{ secrets.SHEET_ID_v32 }}
+          RESOURCES_SHEET_ID: ${{ secrets.RESOURCES_SHEET_ID }}
+          SHEET_LOCALE: ${{ secrets.SHEET_LOCALE }}
+          STUCK_BOT: ${{ secrets.STUCK_BOT }}
+      - name: show job status
+        if: always()
+        run: |
+          git checkout master
+          node lib/notify_tg.js $status
+        env:
+          status: ${{job.status}}
+          STUCK_BOT: ${{ secrets.STUCK_BOT }}
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+      - name: Repository Dispatch
+        if: always() #  ${{ !cancelled() }}
+        uses: actions/github-script@v2
+        with:
+          github-token: ${{secrets.JUN_TOKEN2}}
+          script: |
+            const fs = require('fs');
+            await github.repos.createDispatchEvent({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    event_type: "my-event",
+                    client_payload: { greeting: "I'm Mr Meeseek. Loot at me!" }
+                  });
