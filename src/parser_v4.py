@@ -30,14 +30,14 @@ META_DATA = ROOT_DIR / "misc.json"
 # Geographical districts of India
 DISTRICT_LIST = ROOT_DIR / "state_district_wise.json"
 # All raw_data's
-RAW_DATA = "raw_data{n}.json"
+RAW_DATA = "raw_data{n}.csv"
 # Deaths and recoveries for entries in raw_data1 and raw_data2
-OUTCOME_DATA = "deaths_recoveries{n}.json"
+OUTCOME_DATA = "death_and_recovered{n}.csv"
 # District data as of 26th April
 DISTRICT_DATA_GOSPEL = CSV_DIR / "districts_26apr_gospel.csv"
 GOSPEL_DATE = "2020-04-26"
 # India testing data
-ICMR_TEST_DATA = ROOT_DIR / "data.json"
+ICMR_TEST_DATA = CSV_DIR / "tested_numbers_icmr_data.csv"
 STATE_TEST_DATA = CSV_DIR / "statewise_tested_numbers_data.csv"
 DISTRICT_TEST_DATA = CSV_DIR / "district_testing.csv"
 STATE_VACCINATION_DATA = CSV_DIR / "vaccine_doses_statewise_v2.csv"
@@ -86,16 +86,16 @@ RAW_DATA_MAP = {
 }
 ICMR_DATA_DICT = {
     "tested": {
-        "key": "totalsamplestested",
-        "source": "source"
+        "key": "Total Samples Tested",
+        "source": "Source"
     },
     "vaccinated1": {
-        "key": "firstdoseadministered",
-        "source": "source4"
+        "key": "First Dose Administered",
+        "source": "Source 4"
     },
     "vaccinated2": {
-        "key": "seconddoseadministered",
-        "source": "source4"
+        "key": "Second Dose Administered",
+        "source": "Source 4"
     },
 }
 VACCINATION_DATA_DICT = {
@@ -219,14 +219,14 @@ def inc(ref, key, count):
   ref[key] += count
 
 
-def parse(raw_data, i):
-  for j, entry in enumerate(raw_data["raw_data"]):
-    count_str = entry["numcases"].strip()
+def parse_raw_data(reader, i):
+  for j, entry in enumerate(reader):
+    count_str = entry["Num Cases"].strip()
 
     if not count_str:
       continue
 
-    state_name = entry["detectedstate"].strip().lower()
+    state_name = entry["Detected State"].strip().lower()
     try:
       state = STATE_CODES[state_name]
     except KeyError:
@@ -234,38 +234,38 @@ def parse(raw_data, i):
       if state_name:
         # Unrecognized state entries are discarded and logged
         logging.warning(
-            f"[L{j+2}] [{entry['dateannounced']}] [Bad state: {entry['detectedstate']}] {entry['numcases']}"
+            f"[L{j+2}] [{entry['Date Announced']}] [Bad state: {entry['Detected State']}] {entry['Num Cases']}"
         )
       continue
 
     try:
-      fdate = datetime.strptime(entry["dateannounced"].strip(), "%d/%m/%Y")
+      fdate = datetime.strptime(entry["Date Announced"].strip(), "%d/%m/%Y")
       date = datetime.strftime(fdate, "%Y-%m-%d")
       if date < MIN_DATE or date > INDIA_DATE:
         # Entries from future dates will be ignored
         logging.warning(
-            f"[L{j+2}] [Future/past date: {entry['dateannounced']}] {entry['detectedstate']}: {entry['detecteddistrict']} {entry['numcases']}"
+            f"[L{j+2}] [Future/past date: {entry['Date Announced']}] {entry['Detected State']}: {entry['Detected District']} {entry['Num Cases']}"
         )
         continue
     except ValueError:
       # Bad date
       logging.warning(
-          f"[L{j+2}] [Bad date: {entry['dateannounced']}] {entry['detectedstate']}: {entry['detecteddistrict']} {entry['numcases']}"
+          f"[L{j+2}] [Bad date: {entry['Date Announced']}] {entry['Detected State']}: {entry['Detected District']} {entry['Num Cases']}"
       )
       continue
 
-    district, expected = parse_district(entry["detecteddistrict"], state)
+    district, expected = parse_district(entry["Detected District"], state)
     if not expected:
       # Print unexpected district names
       logging.warning(
-          f"[L{j+2}] [{entry['dateannounced']}] [Unexpected district: {district} ({state})] {entry['numcases']}"
+          f"[L{j+2}] [{entry['Date Announced']}] [Unexpected district: {district} ({state})] {entry['Num Cases']}"
       )
 
     try:
       count = int(count_str)
     except ValueError:
       logging.warning(
-          f"[L{j+2}] [{entry['dateannounced']}] [Bad numcases: {entry['numcases']}] {state}: {district}"
+          f"[L{j+2}] [{entry['Date Announced']}] [Bad numcases: {entry['Num Cases']}] {state}: {district}"
       )
       continue
 
@@ -273,7 +273,7 @@ def parse(raw_data, i):
       try:
         # All rows in v1 and v2 are confirmed cases
         statistic = ("confirmed" if i < 3 else
-                     RAW_DATA_MAP[entry["currentstatus"].strip().lower()])
+                     RAW_DATA_MAP[entry["Current Status"].strip().lower()])
 
         inc(data[date]["TT"]["delta"], statistic, count)
         inc(data[date][state]["delta"], statistic, count)
@@ -290,13 +290,13 @@ def parse(raw_data, i):
       except KeyError:
         # Unrecognized status
         logging.warning(
-            f"[L{j+2}] [{entry['dateannounced']}] [Bad currentstatus: {entry['currentstatus']}] {state}: {district} {entry['numcases']}"
+            f"[L{j+2}] [{entry['Date Announced']}] [Bad currentstatus: {entry['Current Status']}] {state}: {district} {entry['Num Cases']}"
         )
 
 
-def parse_outcome(outcome_data, i):
-  for j, entry in enumerate(outcome_data["deaths_recoveries"]):
-    state_name = entry["state"].strip().lower()
+def parse_outcome(reader, i):
+  for j, entry in enumerate(reader):
+    state_name = entry["State"].strip().lower()
     try:
       state = STATE_CODES[state_name]
     except KeyError:
@@ -304,31 +304,31 @@ def parse_outcome(outcome_data, i):
       if state_name:
         # Unrecognized state entries are discarded and logged
         logging.warning(
-            f"[L{j + 2}] [{entry['date']}] [Bad state: {entry['state']}]")
+            f"[L{j + 2}] [{entry['Date']}] [Bad state: {entry['State']}]")
       continue
 
     try:
-      fdate = datetime.strptime(entry["date"].strip(), "%d/%m/%Y")
+      fdate = datetime.strptime(entry["Date"].strip(), "%d/%m/%Y")
       date = datetime.strftime(fdate, "%Y-%m-%d")
       if date < MIN_DATE or date > INDIA_DATE:
         # Entries from future dates will be ignored
         logging.warning(
-            f"[L{j + 2}] [Future/past date: {entry['date']}] {state}")
+            f"[L{j + 2}] [Future/past date: {entry['Date']}] {state}")
         continue
     except ValueError:
       # Bad date
-      logging.warning(f"[L{j + 2}] [Bad date: {entry['date']}] {state}")
+      logging.warning(f"[L{j + 2}] [Bad date: {entry['Date']}] {state}")
       continue
 
-    district, expected = parse_district(entry["district"], state)
+    district, expected = parse_district(entry["District"], state)
     if not expected:
       # Print unexpected district names
       logging.warning(
-          f"[L{j+2}] [{entry['date']}] [Unexpected district: {district} ({state})] {entry['numcases']}"
+          f"[L{j+2}] [{entry['Date']}] [Unexpected district: {district} ({state})] {entry['Num Cases']}"
       )
 
     try:
-      statistic = RAW_DATA_MAP[entry["patientstatus"].strip().lower()]
+      statistic = RAW_DATA_MAP[entry["Patient_Status"].strip().lower()]
 
       inc(data[date]["TT"]["delta"], statistic, 1)
       inc(data[date][state]["delta"], statistic, 1)
@@ -340,7 +340,7 @@ def parse_outcome(outcome_data, i):
     except KeyError:
       # Unrecognized status
       logging.warning(
-          f"[L{j+2}] [{entry['date']}] [Bad patientstatus: {entry['patientstatus']}] {state}: {district}"
+          f"[L{j+2}] [{entry['Date']}] [Bad patientstatus: {entry['Patient_Status']}] {state}: {district}"
       )
 
 
@@ -364,8 +364,8 @@ def parse_district_gospel(reader):
             statistic] = count
 
 
-def parse_icmr(icmr_data):
-  for j, entry in enumerate(icmr_data["tested"]):
+def parse_icmr(reader):
+  for j, entry in enumerate(reader):
     for statistic, statistic_dict in ICMR_DATA_DICT.items():
       key = statistic_dict["key"]
       count_str = entry[key].strip()
@@ -374,23 +374,23 @@ def parse_icmr(icmr_data):
         continue
 
       try:
-        fdate = datetime.strptime(entry["testedasof"].strip(), "%d/%m/%Y")
+        fdate = datetime.strptime(entry["Tested As Of"].strip(), "%d/%m/%Y")
         date = datetime.strftime(fdate, "%Y-%m-%d")
         if date < MIN_DATE or date > INDIA_DATE:
           # Entries from future dates will be ignored and logged
           logging.warning(
-              f"[L{j + 2}] [Future/past date: {entry['testedasof']}]")
+              f"[L{j + 2}] [Future/past date: {entry['Tested As Of']}]")
           continue
       except ValueError:
         # Bad timestamp
-        logging.warning(f"[L{j + 2}] [Bad date: {entry['testedasof']}]")
+        logging.warning(f"[L{j + 2}] [Bad date: {entry['Tested As Of']}]")
         continue
 
       try:
         count = int(count_str)
       except ValueError:
         logging.warning(
-            f"[L{j + 2}] [{entry['testedasof']}] [Bad {key}: {entry[key]}]")
+            f"[L{j + 2}] [{entry['Tested As Of']}] [Bad {key}: {entry[key]}]")
         continue
 
       if count:
@@ -1192,13 +1192,13 @@ if __name__ == "__main__":
   logging.info("Parsing raw_data...")
   i = 1
   while True:
-    fn = ROOT_DIR / RAW_DATA.format(n=i)
+    fn = CSV_DIR / RAW_DATA.format(n=i)
     if not fn.is_file():
       break
     with open(fn) as f:
       logging.info(f"File: {fn.name}")
-      raw_data = json.load(f)
-      parse(raw_data, i)
+      reader = csv.DictReader(f)
+      parse_raw_data(reader, i)
     i += 1
   logging.info("Done!")
 
@@ -1206,11 +1206,11 @@ if __name__ == "__main__":
   logging.info("-" * PRINT_WIDTH)
   logging.info("Parsing deaths_recoveries...")
   for i in [1, 2]:
-    fn = ROOT_DIR / OUTCOME_DATA.format(n=i)
+    fn = CSV_DIR / OUTCOME_DATA.format(n=i)
     with open(fn) as f:
       logging.info(f"File: {fn.name}")
-      raw_data = json.load(f)
-      parse_outcome(raw_data, i)
+      reader = csv.DictReader(f)
+      parse_outcome(reader, i)
   logging.info("Done!")
 
   logging.info("-" * PRINT_WIDTH)
@@ -1226,8 +1226,8 @@ if __name__ == "__main__":
   logging.info("Parsing ICMR test data for India...")
   with open(ICMR_TEST_DATA) as f:
     logging.info(f"File: {ICMR_TEST_DATA.name}")
-    raw_data = json.load(f, object_pairs_hook=OrderedDict)
-    parse_icmr(raw_data)
+    reader = csv.DictReader(f)
+    parse_icmr(reader)
   logging.info("Done!")
 
   logging.info("-" * PRINT_WIDTH)
