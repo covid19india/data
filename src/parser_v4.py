@@ -1332,13 +1332,13 @@ if __name__ == "__main__":
   OUTPUT_MIN_DIR.mkdir(parents=True, exist_ok=True)
 
   # Dump prettified full data json
-  fn = f"{OUTPUT_DATA_PREFIX}-all"
+  #  fn = f"{OUTPUT_DATA_PREFIX}-all"
   # Only dump minified data-all.json
   #  with open((OUTPUT_DIR / fn).with_suffix('.json'), 'w') as f:
   #    json.dump(data, f, indent=2, sort_keys=True)
   # Dump minified full data
-  with open((OUTPUT_MIN_DIR / fn).with_suffix(".min.json"), "w") as f:
-    json.dump(data, f, separators=(",", ":"), sort_keys=True)
+  #  with open((OUTPUT_MIN_DIR / fn).with_suffix(".min.json"), "w") as f:
+    #  json.dump(data, f, separators=(",", ":"), sort_keys=True)
 
   # Split data and dump separate json for each date
   for i, date in enumerate(sorted(data)):
@@ -1355,12 +1355,12 @@ if __name__ == "__main__":
       json.dump(curr_data, f, separators=(",", ":"), sort_keys=True)
 
   # Dump full timeseries json
-  fn = f"{OUTPUT_TIMESERIES_PREFIX}-all"
+  #  fn = f"{OUTPUT_TIMESERIES_PREFIX}-all"
   # Only dump minified timeseries-all.json
   #  with open((OUTPUT_DIR / fn).with_suffix('.json'), 'w') as f:
   #    json.dump(timeseries, f, indent=2, sort_keys=True)
-  with open((OUTPUT_MIN_DIR / fn).with_suffix(".min.json"), "w") as f:
-    json.dump(timeseries, f, separators=(",", ":"), sort_keys=True)
+  #  with open((OUTPUT_MIN_DIR / fn).with_suffix(".min.json"), "w") as f:
+    #  json.dump(timeseries, f, separators=(",", ":"), sort_keys=True)
 
   # Dump state timeseries json
   fn = OUTPUT_TIMESERIES_PREFIX

@@ -15,7 +15,6 @@
 | ------------- | -------------------------------------------------------- | ---------------------- |
 | :green_heart: | <https://api.covid19india.org/v4/min/timeseries.min.json>  | Daily numbers across C,R,D and Tested per state (historical data).         |
 | :green_heart: | <https://api.covid19india.org/v4/min/data.min.json>  | Current day numbers across districts and states.   |
-| :green_heart: | <https://api.covid19india.org/v4/min/data-all.min.json>  | Per day numbers across districts and states - consider using timeseries in place of this. This is a huge file and is a mix of timeseries and data.min.json |
 
 **Note**: Please consider using the above endpoints for all your data needs. All the data we show on the website is fuelled by the above endpoints.
 
