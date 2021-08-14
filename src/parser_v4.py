@@ -15,9 +15,10 @@ logging.basicConfig(stream=sys.stdout,
                     level=logging.INFO)
 
 # Current date in India
-INDIA_DATE = datetime.strftime(
-    datetime.utcnow() + timedelta(hours=5, minutes=30), "%Y-%m-%d")
+INDIA_DATETIME = datetime.utcnow() + timedelta(hours=5, minutes=30)
 INDIA_UTC_OFFSET = "+05:30"
+INDIA_TIME = INDIA_DATETIME.isoformat(timespec='seconds') + INDIA_UTC_OFFSET
+INDIA_DATE = datetime.strftime(INDIA_DATETIME, "%Y-%m-%d")
 
 # Arbitrary minimum date
 MIN_DATE = "2020-01-01"
@@ -43,6 +44,8 @@ STATE_TEST_DATA = CSV_DIR / "statewise_tested_numbers_data.csv"
 DISTRICT_TEST_DATA = CSV_DIR / "district_testing.csv"
 STATE_VACCINATION_DATA = CSV_DIR / "vaccine_doses_statewise_v2.csv"
 DISTRICT_VACCINATION_DATA = CSV_DIR / "cowin_vaccine_data_districtwise.csv"
+# Old data.json
+DATA_OLD = ROOT_DIR / "data-old.min.json"
 
 ## For adding metadata
 # For state notes and last updated
@@ -946,7 +949,7 @@ def generate_timeseries(districts=False):
   trim_timeseries()
 
 
-def add_state_meta(reader):
+def add_state_notes(reader):
   last_date = sorted(data)[-1]
   last_data = data[last_date]
   for j, entry in enumerate(reader):
@@ -954,28 +957,14 @@ def add_state_meta(reader):
     if state not in STATE_CODES.values() or state not in last_data:
       # Entries having unrecognized state codes/zero cases are discarded
       if state not in STATE_CODES.values():
-        logging.warning(
-            f"[L{j+2}] [{entry['Last_Updated_Time']}] Bad state: {entry['State_code']}"
-        )
+        logging.warning(f"[L{j+2}] [Bad state: {entry['State_code']}")
       continue
 
-    try:
-      fdate = datetime.strptime(entry["Last_Updated_Time"].strip(),
-                                "%d/%m/%Y %H:%M:%S")
-    except ValueError:
-      # Bad timestamp
-      logging.warning(
-          f"[L{j + 2}] [Bad timestamp: {entry['Last_Updated_Time']}] {state}")
-      continue
-
-    last_data[state]["meta"]["date"] = last_date
-    last_data[state]["meta"]["last_updated"] = fdate.isoformat(
-    ) + INDIA_UTC_OFFSET
     if entry["State_Notes"]:
       last_data[state]["meta"]["notes"] = entry["State_Notes"].strip()
 
 
-def add_district_meta(reader):
+def add_district_notes(reader):
   last_data = data[sorted(data)[-1]]
   for j, entry in enumerate(reader):
     state = entry["State_Code"].strip().upper()
@@ -993,6 +982,26 @@ def add_district_meta(reader):
     notes = entry["District_Notes"].strip()
     if notes:
       last_data[state]["districts"][district]["meta"]["notes"] = notes
+
+
+def add_state_last_updated(data_old):
+  last_date = sorted(data)[-1]
+  last_data = data[last_date]
+  for state in data_old:
+    last_data[state]["meta"]["last_updated"] = data_old[state]["meta"][
+        "last_updated"]
+    for statistic in ALL_STATISTICS:
+      c1 = contains(data_old, [state, 'total', statistic])
+      c2 = contains(last_data, [state, 'total', statistic])
+      if (c1
+          or c2) and (not c1 or not c2 or data_old[state]['total'][statistic]
+                      != last_data[state]['total'][statistic]):
+        # Use current time
+        last_data[state]["meta"]["last_updated"] = INDIA_TIME
+        break
+
+    # Add date for data.json
+    last_data[state]["meta"]["date"] = last_date
 
 
 def tally_statewise(reader):
@@ -1027,9 +1036,7 @@ def tally_statewise(reader):
                 .strip()),
         }
       except ValueError:
-        logging.warning(
-            f"[L{j+2}] [{state_data['Last_Updated_Time']}] [Bad value for {statistic}] {state}"
-        )
+        logging.warning(f"[L{j+2}] [Bad value for {statistic}] {state}")
         continue
 
       for stype in ["total", "delta"]:
@@ -1287,7 +1294,7 @@ if __name__ == "__main__":
   accumulate_days(21, offset=14, statistics=["confirmed"])
   logging.info("Done!")
 
-  # Strip empty values ({}, 0, '', None)
+  # Strip empty values ({}, 0, '', None) before adding metadata
   logging.info("-" * PRINT_WIDTH)
   logging.info("Stripping empty values...")
   data = stripper(data)
@@ -1299,23 +1306,34 @@ if __name__ == "__main__":
   add_populations()
   logging.info("Done!")
 
+  # Add state notes
+  logging.info("-" * PRINT_WIDTH)
+  logging.info("Adding state and district notes...")
+  with open(STATE_WISE) as f:
+    logging.info(f"File: {STATE_WISE.name}")
+    reader = csv.DictReader(f)
+    add_state_notes(reader)
+
+  # Add district notes
+  with open(DISTRICT_WISE) as f:
+    logging.info(f"File: {DISTRICT_WISE.name}")
+    reader = csv.DictReader(f)
+    add_district_notes(reader)
+  logging.info("Done!")
+
+  # Add last updated time for states
+  logging.info("-" * PRINT_WIDTH)
+  logging.info("Adding last updated time for states...")
+  with open(DATA_OLD) as f:
+    logging.info(f"File: {DATA_OLD.name}")
+    data_old = json.load(f, )
+    add_state_last_updated(data_old)
+  logging.info("Done!")
+
   # Generate timeseries
   logging.info("-" * PRINT_WIDTH)
   logging.info("Generating timeseries...")
   generate_timeseries(districts=True)
-  logging.info("Done!")
-
-  logging.info("-" * PRINT_WIDTH)
-  logging.info("Adding state and district metadata...")
-  with open(STATE_WISE) as f:
-    logging.info(f"File: {STATE_WISE.name}")
-    reader = csv.DictReader(f)
-    add_state_meta(reader)
-
-  with open(DISTRICT_WISE) as f:
-    logging.info(f"File: {DISTRICT_WISE.name}")
-    reader = csv.DictReader(f)
-    add_district_meta(reader)
   logging.info("Done!")
 
   logging.info("-" * PRINT_WIDTH)

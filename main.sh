@@ -29,6 +29,7 @@ cp ./states_daily.json ./tmp
 cp ./district_wise.json ./tmp
 cp -r ./updatelog ./tmp
 cp -r ./csv ./tmp
+cp v4/min/data.min.json ./tmp/data-old.min.json
 
 # temporary fixes. remove once Google Sheets is normal
 cp ./data.json ./tmp
@@ -60,6 +61,7 @@ node src/generate_activity_log.js
 git checkout "$gh_pages_branch"
 
 rm tmp/data_prev.json
+rm tmp/data-old.min.json
 
 cp -r tmp/* .
 rm -r tmp/
