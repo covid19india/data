@@ -38,7 +38,7 @@ cp ./data.json ./tmp
 git checkout "$main_branch"
 
 
-node src/sheet-to-json_generic.js
+# node src/sheet-to-json_generic.js
 
 cp README.md tmp/
 cp -r documentation/ tmp/
