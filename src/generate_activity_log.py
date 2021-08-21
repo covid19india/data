@@ -83,16 +83,16 @@ if __name__ == "__main__":
                 tmptext += str(deltaRecovered) + " new recoveries\n"
             if deltaDeaths > 0:
                 tmptext += str(deltaDeaths) + " new deaths\n"
-            longtext += "*"+state + ":*\n" + tmptext
+            longtext += "*"+state + ":*\n" + tmptext + "\n"
             updatelogtxt += ""+state + ":\n" + tmptext + "\n"
     if updatelogtxt:
         # logging.info(json.dumps(data, indent=3))
-        current_time = datetime.now().strftime("%Y %b %d, %I:%M:%S %p IST")
+        current_time = datetime.now().strftime("%Y %b %d, %I:%M %p IST")
         longtext = "_"+current_time + "_\n\n" + longtext
-        longtext += f"""
-    ``` Total Cases: ({total["DeltaConfirmed"]}) {total["Confirmed"]}
- Recovered: ({total["DeltaRecovered"]}) {total["Recovered"]}
- Deaths: ({total["DeltaDeaths"]}) {total["Deaths"]}```
+        longtext += f"""```
+ Total Cases: (↑{total["DeltaConfirmed"]}) {total["Confirmed"]}
+ Recovered  : (↑{total["DeltaRecovered"]}) {total["Recovered"]}
+ Deaths     : (↑{total["DeltaDeaths"]}) {total["Deaths"]}```
 
 www.covid19india.org"""
         logging.info("generate updatelog/log.json")
