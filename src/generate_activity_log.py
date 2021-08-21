@@ -5,6 +5,8 @@ import logging
 import sys
 from datetime import datetime
 from pathlib import Path
+import json
+import time
 
 ROOT_DIR = Path("tmp")
 CSV_DIR = ROOT_DIR / "csv" / "latest"
@@ -22,7 +24,7 @@ total = dict()
 
 
 if __name__ == "__main__":
-    logging.info(STATE_WISE_PREV)
+    logging.info("generate_activity_log.py start")
     with open(STATE_WISE_PREV) as f:
         reader = csv.DictReader(f)
         for row in reader:
@@ -83,22 +85,32 @@ if __name__ == "__main__":
                 tmptext += str(deltaDeaths) + " new deaths\n"
             longtext += "*"+state + ":*\n" + tmptext + "\n"
             updatelogtxt += ""+state + ":\n" + tmptext + "\n"
-    if not updatelogtxt:
-        exit()
-    # logging.info(json.dumps(data, indent=3))
-    current_time = datetime.now().strftime("%Y %b %d, %I:%M:%S %p IST")
-    longtext = "_"+current_time + "_\n\n" + longtext
-    longtext += f"""
+    if updatelogtxt:
+        # logging.info(json.dumps(data, indent=3))
+        current_time = datetime.now().strftime("%Y %b %d, %I:%M:%S %p IST")
+        longtext = "_"+current_time + "_\n\n" + longtext
+        longtext += f"""
 
+    ``` Total Cases: ({total["DeltaConfirmed"]}) {total["Confirmed"]}
+Recovered: ({total["DeltaRecovered"]}) {total["Recovered"]}
+Deaths: ({total["DeltaDeaths"]}) {total["Deaths"]}```
 
-``` Total Cases: ({total["DeltaConfirmed"]}) {total["Confirmed"]}
- Recovered: ({total["DeltaRecovered"]}) {total["Recovered"]}
- Deaths: ({total["DeltaDeaths"]}) {total["Deaths"]}```
+www.covid19india.org"""
+        logging.info("generate updatelog/log.json")
+        # logging.info(longtext)
+        with open('/tmp/apidata_iumessage', 'a') as the_file:
+            the_file.write(longtext)
 
-www.covid19india.org
-"""
-    logging.info(longtext)
-    with open('/tmp/apidata_iumessage', 'a') as the_file:
-        the_file.write(longtext)
+        logging.info(updatelogtxt)
+        with open('./tmp/updatelog/log.json', 'r') as f:
+            data = json.load(f)
+        with open('./tmp/updatelog/log.json', 'w') as f:
+            data.pop(0)
+            timestamp = time.time()
+            new_entry = {'update': updatelogtxt, 'timestamp': int(timestamp)}
+            data.append(new_entry)
+            f.write(json.dumps(data, indent=3))
 
-    logging.info(updatelogtxt)
+    else:
+        logging.info("No delta changes")
+    logging.info("generate_activity_log.py end")
