@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "main.sh start"
 set -eu
 
 repo_uri="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
@@ -15,60 +15,33 @@ git config user.email "${GITHUB_ACTOR}@bots.github.com"
 git checkout "$gh_pages_branch"
 
 mkdir tmp
-mkdir tmp/resources
-mkdir tmp/v2
-mkdir tmp/updatelog
 
-cp ./data.json ./tmp/data_prev.json
-# cp ./*.json ./tmp/
-cp ./raw_data*.json ./tmp
-cp ./misc.json ./tmp
-cp ./deaths_recoveries*.json ./tmp
-cp ./locales*.json ./tmp
-cp ./states_daily.json ./tmp
-cp ./district_wise.json ./tmp
 cp -r ./updatelog ./tmp
 cp -r ./csv ./tmp
 cp v4/min/data.min.json ./tmp/data-old.min.json
 cp ./csv/latest/state_wise.csv ./tmp/state_wise_prev
 
-# temporary fixes. remove once Google Sheets is normal
-cp ./data.json ./tmp
 
 git checkout "$main_branch"
 
-
-# node src/sheet-to-json_generic.js
 
 cp README.md tmp/
 cp -r documentation/ tmp/
 
 node src/sheets-to-csv.js
 
-node src/states_daily_to_csv.js
-node src/district_data_generator.js
-# node src/concat_data.js
-# node src/split_raw_data.js
-# node src/snapshot_zones.js 
-# node src/generate_districts_daily.js
-node src/generate_locale.js
-# pip3 install --quiet -r requirements.txt
 python3 src/parser_v4.py
-# python3 src/build_raw_data.py
-
-node src/sanity_check.js
-# node src/generate_activity_log.js
 python3 src/generate_activity_log.py
+# node src/sanity_check.js # need rewrite with new json
+
 
 git checkout "$gh_pages_branch"
 
-rm tmp/data_prev.json
 rm tmp/data-old.min.json
 rm tmp/state_wise_prev
 
 cp -r tmp/* .
 rm -r tmp/
-
 
 
 git add .
@@ -85,4 +58,4 @@ else
     echo "No changes since last run"
 fi
 
-echo "finish"
+echo "main.sh end"
