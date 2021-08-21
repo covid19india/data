@@ -30,6 +30,7 @@ cp ./district_wise.json ./tmp
 cp -r ./updatelog ./tmp
 cp -r ./csv ./tmp
 cp v4/min/data.min.json ./tmp/data-old.min.json
+cp ./csv/latest/state_wise.csv ./tmp/state_wise_prev
 
 # temporary fixes. remove once Google Sheets is normal
 cp ./data.json ./tmp
@@ -56,12 +57,14 @@ python3 src/parser_v4.py
 # python3 src/build_raw_data.py
 
 node src/sanity_check.js
-node src/generate_activity_log.js
+# node src/generate_activity_log.js
+python3 src/generate_activity_log.py
 
 git checkout "$gh_pages_branch"
 
 rm tmp/data_prev.json
 rm tmp/data-old.min.json
+rm tmp/state_wise_prev
 
 cp -r tmp/* .
 rm -r tmp/
