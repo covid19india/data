@@ -16,6 +16,10 @@ jobs:
     timeout-minutes: 19
 
     steps:
+      - name: Set Timezone to IST
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: "Asia/Kolkata"
       - uses: actions/checkout@v2
       - run: |
           git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
