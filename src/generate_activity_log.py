@@ -30,12 +30,6 @@ if __name__ == "__main__":
         for row in reader:
             if row["State"] not in data:
                 if row["State"] == "Total":
-                    total["Confirmed"] = row["Confirmed"]
-                    total["Recovered"] = row["Recovered"]
-                    total["Deaths"] = row["Deaths"]
-                    total["DeltaConfirmed"] = row["Delta_Confirmed"]
-                    total["DeltaRecovered"] = row["Delta_Recovered"]
-                    total["DeltaDeaths"] = row["Delta_Deaths"]
                     pass
                 else:
                     data[row["State"]] = {"prev": {
@@ -51,6 +45,12 @@ if __name__ == "__main__":
         reader = csv.DictReader(f)
         for row in reader:
             if row["State"] == "Total":
+                total["Confirmed"] = row["Confirmed"]
+                total["Recovered"] = row["Recovered"]
+                total["Deaths"] = row["Deaths"]
+                total["DeltaConfirmed"] = row["Delta_Confirmed"]
+                total["DeltaRecovered"] = row["Delta_Recovered"]
+                total["DeltaDeaths"] = row["Delta_Deaths"]
                 continue
             if row["State"] not in data:
                 logging.error("New state?")
