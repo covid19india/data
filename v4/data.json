@@ -6,7 +6,7 @@
     "delta7": {
       "confirmed": 10,
       "recovered": 1,
-      "tested": 9486,
+      "tested": 11348,
       "vaccinated1": 5809,
       "vaccinated2": 2939
     },
@@ -67,18 +67,18 @@
     },
     "meta": {
       "date": "2021-08-24",
-      "last_updated": "2021-08-24T13:19:18+05:30",
+      "last_updated": "2021-08-24T18:36:03+05:30",
       "population": 397000,
       "tested": {
-        "date": "2021-08-22",
-        "source": "https://dhs.andaman.gov.in/NewEvents/773.pdf"
+        "date": "2021-08-23",
+        "source": "https://dhs.andaman.gov.in/NewEvents/774.pdf"
       }
     },
     "total": {
       "confirmed": 7559,
       "deceased": 129,
       "recovered": 7420,
-      "tested": 472803,
+      "tested": 474665,
       "vaccinated1": 241644,
       "vaccinated2": 101276
     }
@@ -87,7 +87,8 @@
     "delta": {
       "confirmed": 1248,
       "deceased": 15,
-      "recovered": 1696
+      "recovered": 1715,
+      "tested": 58890
     },
     "delta21_14": {
       "confirmed": 13628
@@ -95,8 +96,8 @@
     "delta7": {
       "confirmed": 8921,
       "deceased": 79,
-      "recovered": 11487,
-      "tested": 372325,
+      "recovered": 11506,
+      "tested": 431215,
       "vaccinated1": 569454,
       "vaccinated2": 426702
     },
@@ -481,14 +482,15 @@
       },
       "Y.S.R. Kadapa": {
         "delta": {
-          "confirmed": 19
+          "confirmed": 19,
+          "recovered": 19
         },
         "delta21_14": {
           "confirmed": 615
         },
         "delta7": {
           "confirmed": 387,
-          "recovered": 465,
+          "recovered": 484,
           "vaccinated1": 10001,
           "vaccinated2": 15231
         },
@@ -501,7 +503,7 @@
         "total": {
           "confirmed": 112079,
           "deceased": 629,
-          "recovered": 111062,
+          "recovered": 111081,
           "tested": 671761,
           "vaccinated1": 1061399,
           "vaccinated2": 415620
@@ -510,18 +512,18 @@
     },
     "meta": {
       "date": "2021-08-24",
-      "last_updated": "2021-08-24T17:57:37+05:30",
+      "last_updated": "2021-08-24T18:36:03+05:30",
       "population": 52221000,
       "tested": {
-        "date": "2021-08-23",
-        "source": "https://twitter.com/ArogyaAndhra/status/1429774139041062918"
+        "date": "2021-08-24",
+        "source": "https://twitter.com/ArogyaAndhra/status/1430124165579767809"
       }
     },
     "total": {
       "confirmed": 2004590,
       "deceased": 13750,
-      "recovered": 1977144,
-      "tested": 26139934,
+      "recovered": 1977163,
+      "tested": 26198824,
       "vaccinated1": 19537294,
       "vaccinated2": 7080678
     }
@@ -3444,42 +3446,52 @@
     }
   },
   "DL": {
+    "delta": {
+      "confirmed": 151,
+      "recovered": 114,
+      "tested": 64810
+    },
     "delta21_14": {
       "confirmed": 401
     },
     "delta7": {
-      "confirmed": 178,
+      "confirmed": 329,
       "deceased": 6,
-      "recovered": 269,
-      "tested": 368938,
+      "recovered": 383,
+      "tested": 433748,
       "vaccinated1": 464947,
       "vaccinated2": 176319
     },
     "districts": {
       "Delhi": {
+        "delta": {
+          "confirmed": 151,
+          "recovered": 114,
+          "tested": 64810
+        },
         "delta21_14": {
           "confirmed": 401
         },
         "delta7": {
-          "confirmed": 178,
+          "confirmed": 329,
           "deceased": 6,
-          "recovered": 269,
-          "tested": 368938,
+          "recovered": 383,
+          "tested": 433748,
           "vaccinated1": 464947,
           "vaccinated2": 176319
         },
         "meta": {
           "population": 19814000,
           "tested": {
-            "date": "2021-08-23",
-            "source": "https://twitter.com/ANI/status/1429781412102787072"
+            "date": "2021-08-24",
+            "source": "https://twitter.com/ANI/status/1430134974955483144"
           }
         },
         "total": {
-          "confirmed": 1437334,
+          "confirmed": 1437485,
           "deceased": 25079,
-          "recovered": 1411881,
-          "tested": 25142853,
+          "recovered": 1411995,
+          "tested": 25207663,
           "vaccinated1": 8943199,
           "vaccinated2": 3531692
         }
@@ -3487,19 +3499,19 @@
     },
     "meta": {
       "date": "2021-08-24",
-      "last_updated": "2021-08-24T13:19:18+05:30",
+      "last_updated": "2021-08-24T18:36:03+05:30",
       "notes": "[July 14]: Value for the total tests conducted has been reduced by 97008 in the state bulletin. Reason given : \"Reconciled with ICMR figures\". We have made the same change.",
       "population": 19814000,
       "tested": {
-        "date": "2021-08-23",
-        "source": "https://twitter.com/ANI/status/1429781412102787072"
+        "date": "2021-08-24",
+        "source": "https://twitter.com/ANI/status/1430134974955483144"
       }
     },
     "total": {
-      "confirmed": 1437334,
+      "confirmed": 1437485,
       "deceased": 25079,
-      "recovered": 1411881,
-      "tested": 25142853,
+      "recovered": 1411995,
+      "tested": 25207663,
       "vaccinated1": 8943199,
       "vaccinated2": 3531692
     }
@@ -3606,14 +3618,19 @@
     }
   },
   "GA": {
+    "delta": {
+      "confirmed": 136,
+      "recovered": 79,
+      "tested": 4920
+    },
     "delta21_14": {
       "confirmed": 689
     },
     "delta7": {
-      "confirmed": 538,
+      "confirmed": 674,
       "deceased": 9,
-      "recovered": 538,
-      "tested": 29363,
+      "recovered": 617,
+      "tested": 34283,
       "vaccinated1": 19808,
       "vaccinated2": 28682
     },
@@ -3645,35 +3662,39 @@
         }
       },
       "Unknown": {
+        "delta": {
+          "confirmed": 136,
+          "recovered": 79
+        },
         "delta21_14": {
           "confirmed": 689
         },
         "delta7": {
-          "confirmed": 538,
+          "confirmed": 674,
           "deceased": 9,
-          "recovered": 538
+          "recovered": 617
         },
         "total": {
-          "confirmed": 173221,
+          "confirmed": 173357,
           "deceased": 3186,
-          "recovered": 169160
+          "recovered": 169239
         }
       }
     },
     "meta": {
       "date": "2021-08-24",
-      "last_updated": "2021-08-24T13:19:18+05:30",
+      "last_updated": "2021-08-24T18:36:03+05:30",
       "population": 1540000,
       "tested": {
-        "date": "2021-08-23",
-        "source": "https://www.goa.gov.in/wp-content/uploads/2021/08/Media-Bulletin-23rd-August-2021.pdf"
+        "date": "2021-08-24",
+        "source": "https://www.goa.gov.in/wp-content/uploads/2021/08/Media-Bulletin-24th-August-2021.pdf"
       }
     },
     "total": {
-      "confirmed": 173221,
+      "confirmed": 173357,
       "deceased": 3186,
-      "recovered": 169160,
-      "tested": 1168151,
+      "recovered": 169239,
+      "tested": 1173071,
       "vaccinated1": 1142024,
       "vaccinated2": 371291
     }
@@ -8712,25 +8733,35 @@
     }
   },
   "ML": {
+    "delta": {
+      "confirmed": 162,
+      "deceased": 4,
+      "recovered": 268,
+      "tested": 3865
+    },
     "delta21_14": {
       "confirmed": 3274
     },
     "delta7": {
-      "confirmed": 1658,
-      "deceased": 41,
-      "recovered": 2278,
-      "tested": 19188,
+      "confirmed": 1820,
+      "deceased": 45,
+      "recovered": 2546,
+      "tested": 23053,
       "vaccinated1": 24818,
       "vaccinated2": 23796
     },
     "districts": {
       "East Garo Hills": {
+        "delta": {
+          "confirmed": 2,
+          "recovered": 4
+        },
         "delta21_14": {
           "confirmed": 50
         },
         "delta7": {
-          "confirmed": 10,
-          "recovered": 25,
+          "confirmed": 12,
+          "recovered": 29,
           "vaccinated1": 2056,
           "vaccinated2": 789
         },
@@ -8738,21 +8769,25 @@
           "population": 317618
         },
         "total": {
-          "confirmed": 1795,
+          "confirmed": 1797,
           "deceased": 9,
-          "recovered": 1762,
+          "recovered": 1766,
           "vaccinated1": 42125,
           "vaccinated2": 11542
         }
       },
       "East Jaintia Hills": {
+        "delta": {
+          "confirmed": 4,
+          "recovered": 5
+        },
         "delta21_14": {
           "confirmed": 39
         },
         "delta7": {
-          "confirmed": 22,
+          "confirmed": 26,
           "deceased": 2,
-          "recovered": 33,
+          "recovered": 38,
           "vaccinated1": 1379,
           "vaccinated2": 1049
         },
@@ -8760,21 +8795,26 @@
           "population": 122436
         },
         "total": {
-          "confirmed": 2284,
+          "confirmed": 2288,
           "deceased": 30,
-          "recovered": 2217,
+          "recovered": 2222,
           "vaccinated1": 56576,
           "vaccinated2": 15066
         }
       },
       "East Khasi Hills": {
+        "delta": {
+          "confirmed": 88,
+          "deceased": 3,
+          "recovered": 77
+        },
         "delta21_14": {
           "confirmed": 1478
         },
         "delta7": {
-          "confirmed": 791,
-          "deceased": 26,
-          "recovered": 981,
+          "confirmed": 879,
+          "deceased": 29,
+          "recovered": 1058,
           "vaccinated1": 3066,
           "vaccinated2": 6902
         },
@@ -8782,20 +8822,24 @@
           "population": 824059
         },
         "total": {
-          "confirmed": 36095,
-          "deceased": 891,
-          "recovered": 33789,
+          "confirmed": 36183,
+          "deceased": 894,
+          "recovered": 33866,
           "vaccinated1": 290658,
           "vaccinated2": 91580
         }
       },
       "North Garo Hills": {
+        "delta": {
+          "confirmed": 2,
+          "recovered": 2
+        },
         "delta21_14": {
           "confirmed": 37
         },
         "delta7": {
-          "confirmed": 16,
-          "recovered": 23,
+          "confirmed": 18,
+          "recovered": 25,
           "vaccinated1": 2213,
           "vaccinated2": 621
         },
@@ -8803,21 +8847,25 @@
           "population": 118325
         },
         "total": {
-          "confirmed": 1649,
+          "confirmed": 1651,
           "deceased": 8,
-          "recovered": 1621,
+          "recovered": 1623,
           "vaccinated1": 54950,
           "vaccinated2": 12051
         }
       },
       "Ribhoi": {
+        "delta": {
+          "confirmed": 7,
+          "recovered": 24
+        },
         "delta21_14": {
           "confirmed": 315
         },
         "delta7": {
-          "confirmed": 296,
+          "confirmed": 303,
           "deceased": 1,
-          "recovered": 249,
+          "recovered": 273,
           "vaccinated1": 1605,
           "vaccinated2": 1901
         },
@@ -8825,21 +8873,25 @@
           "population": 258380
         },
         "total": {
-          "confirmed": 8874,
+          "confirmed": 8881,
           "deceased": 71,
-          "recovered": 8372,
+          "recovered": 8396,
           "vaccinated1": 81250,
           "vaccinated2": 19341
         }
       },
       "South Garo Hills": {
+        "delta": {
+          "confirmed": 5,
+          "recovered": 2
+        },
         "delta21_14": {
           "confirmed": 32
         },
         "delta7": {
-          "confirmed": 22,
+          "confirmed": 27,
           "deceased": 1,
-          "recovered": 24,
+          "recovered": 26,
           "vaccinated1": 1760,
           "vaccinated2": 704
         },
@@ -8847,21 +8899,25 @@
           "population": 142574
         },
         "total": {
-          "confirmed": 1196,
+          "confirmed": 1201,
           "deceased": 12,
-          "recovered": 1156,
+          "recovered": 1158,
           "vaccinated1": 34300,
           "vaccinated2": 10500
         }
       },
       "South West Garo Hills": {
+        "delta": {
+          "confirmed": 6,
+          "recovered": 2
+        },
         "delta21_14": {
           "confirmed": 39
         },
         "delta7": {
-          "confirmed": 16,
+          "confirmed": 22,
           "deceased": 1,
-          "recovered": 24,
+          "recovered": 26,
           "vaccinated1": 1786,
           "vaccinated2": 925
         },
@@ -8869,21 +8925,24 @@
           "population": 172495
         },
         "total": {
-          "confirmed": 1822,
+          "confirmed": 1828,
           "deceased": 16,
-          "recovered": 1783,
+          "recovered": 1785,
           "vaccinated1": 65953,
           "vaccinated2": 16858
         }
       },
       "South West Khasi Hills": {
+        "delta": {
+          "recovered": 12
+        },
         "delta21_14": {
           "confirmed": 148
         },
         "delta7": {
           "confirmed": 111,
           "deceased": 1,
-          "recovered": 134,
+          "recovered": 146,
           "vaccinated1": 587,
           "vaccinated2": 836
         },
@@ -8893,19 +8952,23 @@
         "total": {
           "confirmed": 2174,
           "deceased": 13,
-          "recovered": 2014,
+          "recovered": 2026,
           "vaccinated1": 31291,
           "vaccinated2": 7615
         }
       },
       "West Garo Hills": {
+        "delta": {
+          "confirmed": 18,
+          "recovered": 20
+        },
         "delta21_14": {
           "confirmed": 407
         },
         "delta7": {
-          "confirmed": 81,
+          "confirmed": 99,
           "deceased": 1,
-          "recovered": 283,
+          "recovered": 303,
           "vaccinated1": 3016,
           "vaccinated2": 2272
         },
@@ -8913,21 +8976,25 @@
           "population": 642923
         },
         "total": {
-          "confirmed": 8751,
+          "confirmed": 8769,
           "deceased": 70,
-          "recovered": 8518,
+          "recovered": 8538,
           "vaccinated1": 194933,
           "vaccinated2": 50465
         }
       },
       "West Jaintia Hills": {
+        "delta": {
+          "confirmed": 10,
+          "recovered": 81
+        },
         "delta21_14": {
           "confirmed": 265
         },
         "delta7": {
-          "confirmed": 121,
+          "confirmed": 131,
           "deceased": 2,
-          "recovered": 176,
+          "recovered": 257,
           "vaccinated1": 1049,
           "vaccinated2": 1467
         },
@@ -8935,21 +9002,26 @@
           "population": 270352
         },
         "total": {
-          "confirmed": 5961,
+          "confirmed": 5971,
           "deceased": 109,
-          "recovered": 5492,
+          "recovered": 5573,
           "vaccinated1": 78040,
           "vaccinated2": 23715
         }
       },
       "West Khasi Hills": {
+        "delta": {
+          "confirmed": 20,
+          "deceased": 1,
+          "recovered": 39
+        },
         "delta21_14": {
           "confirmed": 464
         },
         "delta7": {
-          "confirmed": 172,
-          "deceased": 6,
-          "recovered": 326,
+          "confirmed": 192,
+          "deceased": 7,
+          "recovered": 365,
           "vaccinated1": 1720,
           "vaccinated2": 1856
         },
@@ -8957,9 +9029,9 @@
           "population": 385601
         },
         "total": {
-          "confirmed": 3469,
-          "deceased": 52,
-          "recovered": 3135,
+          "confirmed": 3489,
+          "deceased": 53,
+          "recovered": 3174,
           "vaccinated1": 68993,
           "vaccinated2": 23862
         }
@@ -8967,18 +9039,18 @@
     },
     "meta": {
       "date": "2021-08-24",
-      "last_updated": "2021-08-24T13:19:18+05:30",
+      "last_updated": "2021-08-24T18:36:03+05:30",
       "population": 3224000,
       "tested": {
-        "date": "2021-08-23",
-        "source": "https://t.me/Covid19india_Auxiliary_Test_Data/10534"
+        "date": "2021-08-24",
+        "source": "https://t.me/Covid19india_Auxiliary_Test_Data/10543"
       }
     },
     "total": {
-      "confirmed": 74070,
-      "deceased": 1281,
-      "recovered": 69859,
-      "tested": 941086,
+      "confirmed": 74232,
+      "deceased": 1285,
+      "recovered": 70127,
+      "tested": 944951,
       "vaccinated1": 1003694,
       "vaccinated2": 287084
     }
@@ -10923,26 +10995,37 @@
     }
   },
   "OR": {
+    "delta": {
+      "confirmed": 625,
+      "deceased": 67,
+      "recovered": 1035,
+      "tested": 53527
+    },
     "delta21_14": {
       "confirmed": 8131
     },
     "delta7": {
-      "confirmed": 5545,
-      "deceased": 405,
-      "recovered": 5863,
-      "tested": 405257,
+      "confirmed": 6170,
+      "deceased": 472,
+      "recovered": 6898,
+      "tested": 458784,
       "vaccinated1": 489670,
       "vaccinated2": 288794
     },
     "districts": {
       "Angul": {
+        "delta": {
+          "confirmed": 18,
+          "deceased": 3,
+          "recovered": 22
+        },
         "delta21_14": {
           "confirmed": 319
         },
         "delta7": {
-          "confirmed": 139,
-          "deceased": 28,
-          "recovered": 121,
+          "confirmed": 157,
+          "deceased": 31,
+          "recovered": 143,
           "vaccinated1": 11179,
           "vaccinated2": 2681
         },
@@ -10953,21 +11036,24 @@
           }
         },
         "total": {
-          "confirmed": 43366,
-          "deceased": 332,
-          "recovered": 42913,
+          "confirmed": 43384,
+          "deceased": 335,
+          "recovered": 42935,
           "tested": 172873,
           "vaccinated1": 397704,
           "vaccinated2": 87446
         }
       },
       "Balangir": {
+        "delta": {
+          "recovered": 8
+        },
         "delta21_14": {
           "confirmed": 26
         },
         "delta7": {
           "confirmed": 41,
-          "recovered": 26,
+          "recovered": 34,
           "vaccinated1": 23319,
           "vaccinated2": 1571
         },
@@ -10980,20 +11066,25 @@
         "total": {
           "confirmed": 23292,
           "deceased": 122,
-          "recovered": 23111,
+          "recovered": 23119,
           "tested": 87867,
           "vaccinated1": 571209,
           "vaccinated2": 95131
         }
       },
       "Balasore": {
+        "delta": {
+          "confirmed": 50,
+          "deceased": 5,
+          "recovered": 65
+        },
         "delta21_14": {
           "confirmed": 376
         },
         "delta7": {
-          "confirmed": 226,
-          "deceased": 18,
-          "recovered": 296,
+          "confirmed": 276,
+          "deceased": 23,
+          "recovered": 361,
           "vaccinated1": 118,
           "vaccinated2": 43
         },
@@ -11004,21 +11095,25 @@
           }
         },
         "total": {
-          "confirmed": 39124,
-          "deceased": 263,
-          "recovered": 38459,
+          "confirmed": 39174,
+          "deceased": 268,
+          "recovered": 38524,
           "tested": 9843,
           "vaccinated1": 707064,
           "vaccinated2": 268364
         }
       },
       "Bargarh": {
+        "delta": {
+          "confirmed": 6,
+          "recovered": 11
+        },
         "delta21_14": {
           "confirmed": 46
         },
         "delta7": {
-          "confirmed": 55,
-          "recovered": 42,
+          "confirmed": 61,
+          "recovered": 53,
           "vaccinated1": 3573,
           "vaccinated2": 4443
         },
@@ -11026,21 +11121,26 @@
           "population": 1478833
         },
         "total": {
-          "confirmed": 30881,
+          "confirmed": 30887,
           "deceased": 326,
-          "recovered": 30469,
+          "recovered": 30480,
           "vaccinated1": 445715,
           "vaccinated2": 117122
         }
       },
       "Bhadrak": {
+        "delta": {
+          "confirmed": 8,
+          "deceased": 2,
+          "recovered": 30
+        },
         "delta21_14": {
           "confirmed": 200
         },
         "delta7": {
-          "confirmed": 79,
-          "deceased": 23,
-          "recovered": 122,
+          "confirmed": 87,
+          "deceased": 25,
+          "recovered": 152,
           "vaccinated1": 46,
           "vaccinated2": 9
         },
@@ -11051,21 +11151,24 @@
           }
         },
         "total": {
-          "confirmed": 25936,
-          "deceased": 127,
-          "recovered": 25653,
+          "confirmed": 25944,
+          "deceased": 129,
+          "recovered": 25683,
           "tested": 258173,
           "vaccinated1": 558650,
           "vaccinated2": 127808
         }
       },
       "Boudh": {
+        "delta": {
+          "recovered": 1
+        },
         "delta21_14": {
           "confirmed": 11
         },
         "delta7": {
           "confirmed": 3,
-          "recovered": 7,
+          "recovered": 8,
           "vaccinated1": 10513,
           "vaccinated2": 920
         },
@@ -11078,20 +11181,25 @@
         "total": {
           "confirmed": 12543,
           "deceased": 107,
-          "recovered": 12428,
+          "recovered": 12429,
           "tested": 496,
           "vaccinated1": 148924,
           "vaccinated2": 29636
         }
       },
       "Cuttack": {
+        "delta": {
+          "confirmed": 56,
+          "deceased": 20,
+          "recovered": 130
+        },
         "delta21_14": {
           "confirmed": 1017
         },
         "delta7": {
-          "confirmed": 755,
-          "deceased": 84,
-          "recovered": 842,
+          "confirmed": 811,
+          "deceased": 104,
+          "recovered": 972,
           "vaccinated1": 12513,
           "vaccinated2": 5103
         },
@@ -11102,21 +11210,25 @@
           }
         },
         "total": {
-          "confirmed": 89899,
-          "deceased": 622,
-          "recovered": 88229,
+          "confirmed": 89955,
+          "deceased": 642,
+          "recovered": 88359,
           "tested": 5720,
           "vaccinated1": 954807,
           "vaccinated2": 298684
         }
       },
       "Deogarh": {
+        "delta": {
+          "confirmed": 9,
+          "recovered": 6
+        },
         "delta21_14": {
           "confirmed": 26
         },
         "delta7": {
-          "confirmed": 55,
-          "recovered": 26,
+          "confirmed": 64,
+          "recovered": 32,
           "vaccinated1": 5640,
           "vaccinated2": 535
         },
@@ -11127,22 +11239,27 @@
           }
         },
         "total": {
-          "confirmed": 6296,
+          "confirmed": 6305,
           "deceased": 48,
-          "recovered": 6178,
+          "recovered": 6184,
           "tested": 682,
           "vaccinated1": 127044,
           "vaccinated2": 23872
         }
       },
       "Dhenkanal": {
+        "delta": {
+          "confirmed": 6,
+          "deceased": 8,
+          "recovered": 22
+        },
         "delta21_14": {
           "confirmed": 111
         },
         "delta7": {
-          "confirmed": 100,
-          "deceased": 49,
-          "recovered": 52,
+          "confirmed": 106,
+          "deceased": 57,
+          "recovered": 74,
           "vaccinated1": 1923,
           "vaccinated2": 336
         },
@@ -11153,20 +11270,23 @@
           }
         },
         "total": {
-          "confirmed": 19433,
-          "deceased": 200,
-          "recovered": 19086,
+          "confirmed": 19439,
+          "deceased": 208,
+          "recovered": 19108,
           "tested": 179477,
           "vaccinated1": 433496,
           "vaccinated2": 95462
         }
       },
       "Gajapati": {
+        "delta": {
+          "confirmed": 2
+        },
         "delta21_14": {
           "confirmed": 24
         },
         "delta7": {
-          "confirmed": 12,
+          "confirmed": 14,
           "recovered": 14,
           "vaccinated1": 9266,
           "vaccinated2": 1306
@@ -11178,7 +11298,7 @@
           }
         },
         "total": {
-          "confirmed": 9553,
+          "confirmed": 9555,
           "deceased": 84,
           "recovered": 9458,
           "tested": 715,
@@ -11187,13 +11307,17 @@
         }
       },
       "Ganjam": {
+        "delta": {
+          "confirmed": 6,
+          "recovered": 8
+        },
         "delta21_14": {
           "confirmed": 58
         },
         "delta7": {
-          "confirmed": 36,
+          "confirmed": 42,
           "deceased": 3,
-          "recovered": 33,
+          "recovered": 41,
           "vaccinated1": 4283,
           "vaccinated2": 123532
         },
@@ -11204,22 +11328,27 @@
           }
         },
         "total": {
-          "confirmed": 33570,
+          "confirmed": 33576,
           "deceased": 475,
-          "recovered": 33055,
+          "recovered": 33063,
           "tested": 750442,
           "vaccinated1": 1538778,
           "vaccinated2": 655445
         }
       },
       "Jagatsinghpur": {
+        "delta": {
+          "confirmed": 38,
+          "deceased": 14,
+          "recovered": 39
+        },
         "delta21_14": {
           "confirmed": 472
         },
         "delta7": {
-          "confirmed": 213,
-          "deceased": 72,
-          "recovered": 202,
+          "confirmed": 251,
+          "deceased": 86,
+          "recovered": 241,
           "vaccinated1": 2598,
           "vaccinated2": 2556
         },
@@ -11230,22 +11359,27 @@
           }
         },
         "total": {
-          "confirmed": 26541,
-          "deceased": 202,
-          "recovered": 26069,
+          "confirmed": 26579,
+          "deceased": 216,
+          "recovered": 26108,
           "tested": 46648,
           "vaccinated1": 335778,
           "vaccinated2": 121624
         }
       },
       "Jajpur": {
+        "delta": {
+          "confirmed": 34,
+          "deceased": 6,
+          "recovered": 72
+        },
         "delta21_14": {
           "confirmed": 426
         },
         "delta7": {
-          "confirmed": 282,
-          "deceased": 26,
-          "recovered": 258,
+          "confirmed": 316,
+          "deceased": 32,
+          "recovered": 330,
           "vaccinated1": 14518,
           "vaccinated2": 2330
         },
@@ -11256,22 +11390,26 @@
           }
         },
         "total": {
-          "confirmed": 42287,
-          "deceased": 131,
-          "recovered": 41722,
+          "confirmed": 42321,
+          "deceased": 137,
+          "recovered": 41794,
           "tested": 53956,
           "vaccinated1": 560891,
           "vaccinated2": 152518
         }
       },
       "Jharsuguda": {
+        "delta": {
+          "confirmed": 3,
+          "recovered": 5
+        },
         "delta21_14": {
           "confirmed": 18
         },
         "delta7": {
-          "confirmed": 8,
+          "confirmed": 11,
           "deceased": 1,
-          "recovered": 31,
+          "recovered": 36,
           "vaccinated1": 10769,
           "vaccinated2": 4853
         },
@@ -11282,21 +11420,25 @@
           }
         },
         "total": {
-          "confirmed": 23666,
+          "confirmed": 23669,
           "deceased": 172,
-          "recovered": 23480,
+          "recovered": 23485,
           "tested": 1663,
           "vaccinated1": 272338,
           "vaccinated2": 63065
         }
       },
       "Kalahandi": {
+        "delta": {
+          "confirmed": 3,
+          "recovered": 8
+        },
         "delta21_14": {
           "confirmed": 30
         },
         "delta7": {
-          "confirmed": 21,
-          "recovered": 31,
+          "confirmed": 24,
+          "recovered": 39,
           "vaccinated1": 14666,
           "vaccinated2": 2561
         },
@@ -11307,21 +11449,25 @@
           }
         },
         "total": {
-          "confirmed": 24222,
+          "confirmed": 24225,
           "deceased": 206,
-          "recovered": 23979,
+          "recovered": 23987,
           "tested": 1458,
           "vaccinated1": 493795,
           "vaccinated2": 127415
         }
       },
       "Kandhamal": {
+        "delta": {
+          "confirmed": 2,
+          "recovered": 9
+        },
         "delta21_14": {
           "confirmed": 57
         },
         "delta7": {
-          "confirmed": 29,
-          "recovered": 27,
+          "confirmed": 31,
+          "recovered": 36,
           "vaccinated1": 11023,
           "vaccinated2": 1750
         },
@@ -11332,22 +11478,27 @@
           }
         },
         "total": {
-          "confirmed": 11466,
+          "confirmed": 11468,
           "deceased": 82,
-          "recovered": 11325,
+          "recovered": 11334,
           "tested": 1516,
           "vaccinated1": 243472,
           "vaccinated2": 59298
         }
       },
       "Kendrapara": {
+        "delta": {
+          "confirmed": 9,
+          "deceased": 3,
+          "recovered": 9
+        },
         "delta21_14": {
           "confirmed": 232
         },
         "delta7": {
-          "confirmed": 142,
-          "deceased": 36,
-          "recovered": 171,
+          "confirmed": 151,
+          "deceased": 39,
+          "recovered": 180,
           "vaccinated1": 18375,
           "vaccinated2": 3501
         },
@@ -11358,22 +11509,27 @@
           }
         },
         "total": {
-          "confirmed": 24046,
-          "deceased": 213,
-          "recovered": 23678,
+          "confirmed": 24055,
+          "deceased": 216,
+          "recovered": 23687,
           "tested": 382732,
           "vaccinated1": 520062,
           "vaccinated2": 139880
         }
       },
       "Kendujhar": {
+        "delta": {
+          "confirmed": 18,
+          "deceased": 1,
+          "recovered": 14
+        },
         "delta21_14": {
           "confirmed": 115
         },
         "delta7": {
-          "confirmed": 66,
-          "deceased": 7,
-          "recovered": 68,
+          "confirmed": 84,
+          "deceased": 8,
+          "recovered": 82,
           "vaccinated1": 1231,
           "vaccinated2": 299
         },
@@ -11384,22 +11540,26 @@
           }
         },
         "total": {
-          "confirmed": 20678,
-          "deceased": 156,
-          "recovered": 20447,
+          "confirmed": 20696,
+          "deceased": 157,
+          "recovered": 20461,
           "tested": 474504,
           "vaccinated1": 589809,
           "vaccinated2": 125341
         }
       },
       "Khordha": {
+        "delta": {
+          "confirmed": 214,
+          "recovered": 391
+        },
         "delta21_14": {
           "confirmed": 2713
         },
         "delta7": {
-          "confirmed": 2117,
+          "confirmed": 2331,
           "deceased": 27,
-          "recovered": 2182,
+          "recovered": 2573,
           "vaccinated1": 23581,
           "vaccinated2": 20863
         },
@@ -11407,21 +11567,25 @@
           "population": 2246341
         },
         "total": {
-          "confirmed": 158232,
+          "confirmed": 158446,
           "deceased": 1431,
-          "recovered": 153747,
+          "recovered": 154138,
           "vaccinated1": 1529357,
           "vaccinated2": 1042974
         }
       },
       "Koraput": {
+        "delta": {
+          "confirmed": 11,
+          "recovered": 4
+        },
         "delta21_14": {
           "confirmed": 38
         },
         "delta7": {
-          "confirmed": 15,
+          "confirmed": 26,
           "deceased": 1,
-          "recovered": 14,
+          "recovered": 18,
           "vaccinated1": 21791,
           "vaccinated2": 8258
         },
@@ -11432,21 +11596,25 @@
           }
         },
         "total": {
-          "confirmed": 18913,
+          "confirmed": 18924,
           "deceased": 75,
-          "recovered": 18817,
+          "recovered": 18821,
           "tested": 1401,
           "vaccinated1": 567517,
           "vaccinated2": 136407
         }
       },
       "Malkangiri": {
+        "delta": {
+          "confirmed": 1,
+          "recovered": 5
+        },
         "delta21_14": {
           "confirmed": 35
         },
         "delta7": {
-          "confirmed": 15,
-          "recovered": 31,
+          "confirmed": 16,
+          "recovered": 36,
           "vaccinated1": 10244,
           "vaccinated2": 1552
         },
@@ -11457,22 +11625,27 @@
           }
         },
         "total": {
-          "confirmed": 11575,
+          "confirmed": 11576,
           "deceased": 48,
-          "recovered": 11498,
+          "recovered": 11503,
           "tested": 1841,
           "vaccinated1": 194508,
           "vaccinated2": 38530
         }
       },
       "Mayurbhanj": {
+        "delta": {
+          "confirmed": 7,
+          "deceased": 2,
+          "recovered": 26
+        },
         "delta21_14": {
           "confirmed": 256
         },
         "delta7": {
-          "confirmed": 193,
-          "deceased": 13,
-          "recovered": 189,
+          "confirmed": 200,
+          "deceased": 15,
+          "recovered": 215,
           "vaccinated1": 996,
           "vaccinated2": 67
         },
@@ -11483,22 +11656,26 @@
           }
         },
         "total": {
-          "confirmed": 39397,
-          "deceased": 254,
-          "recovered": 38892,
+          "confirmed": 39404,
+          "deceased": 256,
+          "recovered": 38918,
           "tested": 3307,
           "vaccinated1": 677536,
           "vaccinated2": 164114
         }
       },
       "Nabarangapur": {
+        "delta": {
+          "deceased": 1,
+          "recovered": 4
+        },
         "delta21_14": {
           "confirmed": 18
         },
         "delta7": {
           "confirmed": 11,
-          "deceased": 1,
-          "recovered": 5,
+          "deceased": 2,
+          "recovered": 9,
           "vaccinated1": 19882,
           "vaccinated2": 7756
         },
@@ -11510,21 +11687,25 @@
         },
         "total": {
           "confirmed": 23489,
-          "deceased": 71,
-          "recovered": 23405,
+          "deceased": 72,
+          "recovered": 23409,
           "tested": 162154,
           "vaccinated1": 377841,
           "vaccinated2": 69619
         }
       },
       "Nayagarh": {
+        "delta": {
+          "confirmed": 10,
+          "recovered": 18
+        },
         "delta21_14": {
           "confirmed": 216
         },
         "delta7": {
-          "confirmed": 102,
+          "confirmed": 112,
           "deceased": 6,
-          "recovered": 165,
+          "recovered": 183,
           "vaccinated1": 11359,
           "vaccinated2": 1972
         },
@@ -11535,21 +11716,25 @@
           }
         },
         "total": {
-          "confirmed": 23086,
+          "confirmed": 23096,
           "deceased": 198,
-          "recovered": 22751,
+          "recovered": 22769,
           "tested": 1104,
           "vaccinated1": 340323,
           "vaccinated2": 86341
         }
       },
       "Nuapada": {
+        "delta": {
+          "confirmed": 1,
+          "recovered": 1
+        },
         "delta21_14": {
           "confirmed": 17
         },
         "delta7": {
-          "confirmed": 2,
-          "recovered": 18,
+          "confirmed": 3,
+          "recovered": 19,
           "vaccinated1": 11084,
           "vaccinated2": 870
         },
@@ -11560,22 +11745,27 @@
           }
         },
         "total": {
-          "confirmed": 22830,
+          "confirmed": 22831,
           "deceased": 84,
-          "recovered": 22735,
+          "recovered": 22736,
           "tested": 310,
           "vaccinated1": 293009,
           "vaccinated2": 45094
         }
       },
       "Puri": {
+        "delta": {
+          "confirmed": 29,
+          "deceased": 1,
+          "recovered": 19
+        },
         "delta21_14": {
           "confirmed": 384
         },
         "delta7": {
-          "confirmed": 169,
-          "deceased": 8,
-          "recovered": 186,
+          "confirmed": 198,
+          "deceased": 9,
+          "recovered": 205,
           "vaccinated1": 5233,
           "vaccinated2": 2012
         },
@@ -11586,22 +11776,27 @@
           }
         },
         "total": {
-          "confirmed": 44329,
-          "deceased": 425,
-          "recovered": 43707,
+          "confirmed": 44358,
+          "deceased": 426,
+          "recovered": 43726,
           "tested": 173340,
           "vaccinated1": 687105,
           "vaccinated2": 171924
         }
       },
       "Rayagada": {
+        "delta": {
+          "confirmed": 12,
+          "deceased": 1,
+          "recovered": 1
+        },
         "delta21_14": {
           "confirmed": 88
         },
         "delta7": {
-          "confirmed": 28,
-          "deceased": 1,
-          "recovered": 40,
+          "confirmed": 40,
+          "deceased": 2,
+          "recovered": 41,
           "vaccinated1": 22928,
           "vaccinated2": 2497
         },
@@ -11612,21 +11807,25 @@
           }
         },
         "total": {
-          "confirmed": 19950,
-          "deceased": 165,
-          "recovered": 19740,
+          "confirmed": 19962,
+          "deceased": 166,
+          "recovered": 19741,
           "tested": 578,
           "vaccinated1": 369328,
           "vaccinated2": 73323
         }
       },
       "Sambalpur": {
+        "delta": {
+          "confirmed": 18,
+          "recovered": 6
+        },
         "delta21_14": {
           "confirmed": 107
         },
         "delta7": {
-          "confirmed": 87,
-          "recovered": 103,
+          "confirmed": 105,
+          "recovered": 109,
           "vaccinated1": 10244,
           "vaccinated2": 9812
         },
@@ -11637,34 +11836,41 @@
           }
         },
         "total": {
-          "confirmed": 30805,
+          "confirmed": 30823,
           "deceased": 229,
-          "recovered": 30475,
+          "recovered": 30481,
           "tested": 2007,
           "vaccinated1": 554033,
           "vaccinated2": 128259
         }
       },
       "State Pool": {
+        "delta": {
+          "confirmed": 48,
+          "recovered": 82
+        },
         "delta21_14": {
           "confirmed": 571
         },
         "delta7": {
-          "confirmed": 468,
-          "recovered": 487
+          "confirmed": 516,
+          "recovered": 569
         },
         "total": {
-          "confirmed": 28116,
-          "recovered": 27420
+          "confirmed": 28164,
+          "recovered": 27502
         }
       },
       "Subarnapur": {
+        "delta": {
+          "recovered": 2
+        },
         "delta21_14": {
           "confirmed": 24
         },
         "delta7": {
           "confirmed": 12,
-          "recovered": 6,
+          "recovered": 8,
           "vaccinated1": 6842,
           "vaccinated2": 1015
         },
@@ -11674,19 +11880,23 @@
         "total": {
           "confirmed": 13121,
           "deceased": 57,
-          "recovered": 13023,
+          "recovered": 13025,
           "vaccinated1": 252343,
           "vaccinated2": 51865
         }
       },
       "Sundargarh": {
+        "delta": {
+          "confirmed": 6,
+          "recovered": 17
+        },
         "delta21_14": {
           "confirmed": 100
         },
         "delta7": {
-          "confirmed": 64,
+          "confirmed": 70,
           "deceased": 1,
-          "recovered": 68,
+          "recovered": 85,
           "vaccinated1": 25027,
           "vaccinated2": 9622
         },
@@ -11694,9 +11904,9 @@
           "population": 2080664
         },
         "total": {
-          "confirmed": 61056,
+          "confirmed": 61062,
           "deceased": 574,
-          "recovered": 60385,
+          "recovered": 60402,
           "vaccinated1": 720793,
           "vaccinated2": 194231
         }
@@ -11704,19 +11914,18 @@
     },
     "meta": {
       "date": "2021-08-24",
-      "last_updated": "2021-08-24T13:19:18+05:30",
+      "last_updated": "2021-08-24T18:36:03+05:30",
       "notes": "[July 12th] :20 non-covid deaths reported in state dashboard are included in the deceased count",
       "population": 43671000,
       "tested": {
-        "date": "2021-08-23",
-        "source": "https://t.me/Covid19india_Auxiliary_Test_Data/10533"
+        "date": "2021-08-24"
       }
     },
     "total": {
-      "confirmed": 1001698,
-      "deceased": 7479,
-      "recovered": 986334,
-      "tested": 17544497,
+      "confirmed": 1002323,
+      "deceased": 7546,
+      "recovered": 987369,
+      "tested": 17598024,
       "vaccinated1": 15841387,
       "vaccinated2": 4901145
     }
@@ -15105,25 +15314,25 @@
   },
   "TT": {
     "delta": {
-      "confirmed": 1248,
-      "deceased": 15,
-      "recovered": 1696
+      "confirmed": 2322,
+      "deceased": 86,
+      "recovered": 3211
     },
     "delta21_14": {
       "confirmed": 267419
     },
     "delta7": {
-      "confirmed": 189895,
-      "deceased": 2604,
+      "confirmed": 190969,
+      "deceased": 2675,
       "other": 50,
-      "recovered": 235940,
+      "recovered": 237455,
       "tested": 10964709,
       "vaccinated1": 20431153,
       "vaccinated2": 7914622
     },
     "meta": {
       "date": "2021-08-24",
-      "last_updated": "2021-08-24T17:57:37+05:30",
+      "last_updated": "2021-08-24T18:36:03+05:30",
       "population": 1332900000,
       "tested": {
         "date": "2021-08-23",
@@ -15131,10 +15340,10 @@
       }
     },
     "total": {
-      "confirmed": 32475011,
-      "deceased": 435156,
+      "confirmed": 32476085,
+      "deceased": 435227,
       "other": 12748,
-      "recovered": 31714352,
+      "recovered": 31715867,
       "tested": 509391792,
       "vaccinated1": 456151209,
       "vaccinated2": 132846596
