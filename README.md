@@ -1,7 +1,11 @@
 # COVID19-India API
 
 ## Announcement
+
 **We have stopped capturing testing data at a district level. Please check the status of the API endpoints below.**
+
+1. As of 13th August our [API](https://github.com/covid19india/api) repository and api.covid19india.org have been deprecated. We redirect api.covid19india.org to data.covid19india.org 
+2. As of 13th August, all json endpoints except v4 endpoints have been deprecated. Please use the csv endpoints or refer to v4 endpoints 
  
 ### Files available
 
