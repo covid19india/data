@@ -1,10 +1,13 @@
 {
   "AN": {
+    "delta": {
+      "confirmed": 1
+    },
     "delta21_14": {
       "confirmed": 5
     },
     "delta7": {
-      "confirmed": 6,
+      "confirmed": 7,
       "recovered": 4,
       "tested": 11719,
       "vaccinated1": 9158,
@@ -51,15 +54,18 @@
         }
       },
       "Unknown": {
+        "delta": {
+          "confirmed": 1
+        },
         "delta21_14": {
           "confirmed": 5
         },
         "delta7": {
-          "confirmed": 6,
+          "confirmed": 7,
           "recovered": 4
         },
         "total": {
-          "confirmed": 7566,
+          "confirmed": 7567,
           "deceased": 129,
           "recovered": 7431
         }
@@ -67,14 +73,14 @@
     },
     "meta": {
       "date": "2021-09-02",
-      "last_updated": "2021-09-02T09:53:02+05:30",
+      "last_updated": "2021-09-02T20:02:31+05:30",
       "population": 397000,
       "tested": {
         "date": "2021-09-01"
       }
     },
     "total": {
-      "confirmed": 7566,
+      "confirmed": 7567,
       "deceased": 129,
       "recovered": 7431,
       "tested": 492647,
@@ -3411,26 +3417,34 @@
     }
   },
   "DL": {
+    "delta": {
+      "confirmed": 39,
+      "recovered": 38
+    },
     "delta21_14": {
       "confirmed": 279
     },
     "delta7": {
-      "confirmed": 205,
+      "confirmed": 244,
       "deceased": 2,
-      "recovered": 273,
+      "recovered": 311,
       "tested": 384488,
       "vaccinated1": 513614,
       "vaccinated2": 239650
     },
     "districts": {
       "Delhi": {
+        "delta": {
+          "confirmed": 39,
+          "recovered": 38
+        },
         "delta21_14": {
           "confirmed": 279
         },
         "delta7": {
-          "confirmed": 205,
+          "confirmed": 244,
           "deceased": 2,
-          "recovered": 273,
+          "recovered": 311,
           "tested": 384488,
           "vaccinated1": 513614,
           "vaccinated2": 239650
@@ -3443,9 +3457,9 @@
           }
         },
         "total": {
-          "confirmed": 1437800,
+          "confirmed": 1437839,
           "deceased": 25082,
-          "recovered": 1412375,
+          "recovered": 1412413,
           "tested": 25737815,
           "vaccinated1": 9737352,
           "vaccinated2": 3894298
@@ -3454,7 +3468,7 @@
     },
     "meta": {
       "date": "2021-09-02",
-      "last_updated": "2021-09-02T09:53:02+05:30",
+      "last_updated": "2021-09-02T20:02:31+05:30",
       "notes": "[July 14]: Value for the total tests conducted has been reduced by 97008 in the state bulletin. Reason given : \"Reconciled with ICMR figures\". We have made the same change.",
       "population": 19814000,
       "tested": {
@@ -3463,9 +3477,9 @@
       }
     },
     "total": {
-      "confirmed": 1437800,
+      "confirmed": 1437839,
       "deceased": 25082,
-      "recovered": 1412375,
+      "recovered": 1412413,
       "tested": 25737815,
       "vaccinated1": 9737352,
       "vaccinated2": 3894298
@@ -15810,26 +15824,26 @@
   },
   "TT": {
     "delta": {
-      "confirmed": 40088,
+      "confirmed": 40128,
       "deceased": 272,
       "other": 4,
-      "recovered": 28517
+      "recovered": 28555
     },
     "delta21_14": {
       "confirmed": 241147
     },
     "delta7": {
-      "confirmed": 294628,
+      "confirmed": 294668,
       "deceased": 2944,
       "other": 50,
-      "recovered": 235957,
+      "recovered": 235995,
       "tested": 9914425,
       "vaccinated1": 36960853,
       "vaccinated2": 13867939
     },
     "meta": {
       "date": "2021-09-02",
-      "last_updated": "2021-09-02T19:47:22+05:30",
+      "last_updated": "2021-09-02T20:02:31+05:30",
       "population": 1332900000,
       "tested": {
         "date": "2021-09-01",
@@ -15837,10 +15851,10 @@
       }
     },
     "total": {
-      "confirmed": 32896809,
+      "confirmed": 32896849,
       "deceased": 439833,
       "other": 12810,
-      "recovered": 32049937,
+      "recovered": 32049975,
       "tested": 524868734,
       "vaccinated1": 509799626,
       "vaccinated2": 153237708
