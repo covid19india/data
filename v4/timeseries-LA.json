@@ -11313,20 +11313,22 @@
       },
       "2021-10-01": {
         "delta": {
+          "confirmed": 6,
+          "recovered": 6,
           "vaccinated1": 249,
           "vaccinated2": 711
         },
         "delta7": {
-          "confirmed": 27,
-          "recovered": 123,
+          "confirmed": 33,
+          "recovered": 129,
           "tested": 5355,
           "vaccinated1": 2296,
           "vaccinated2": 5874
         },
         "total": {
-          "confirmed": 20803,
+          "confirmed": 20809,
           "deceased": 207,
-          "recovered": 20528,
+          "recovered": 20534,
           "tested": 537474,
           "vaccinated1": 205533,
           "vaccinated2": 138654
@@ -31379,6 +31381,24 @@
               "tested": 72597,
               "vaccinated1": 119243,
               "vaccinated2": 81719
+            }
+          }
+        }
+      },
+      "Unknown": {
+        "dates": {
+          "2021-10-01": {
+            "delta": {
+              "confirmed": 6,
+              "recovered": 6
+            },
+            "delta7": {
+              "confirmed": 6,
+              "recovered": 6
+            },
+            "total": {
+              "confirmed": 6,
+              "recovered": 6
             }
           }
         }
