@@ -12636,6 +12636,7 @@
         "delta": {
           "confirmed": 246,
           "deceased": 4,
+          "recovered": 272,
           "tested": 44528,
           "vaccinated1": 356864,
           "vaccinated2": 337673
@@ -12643,7 +12644,7 @@
         "delta7": {
           "confirmed": 2289,
           "deceased": 42,
-          "recovered": 2318,
+          "recovered": 2590,
           "tested": 326758,
           "vaccinated1": 763058,
           "vaccinated2": 679164
@@ -12652,7 +12653,31 @@
           "confirmed": 602712,
           "deceased": 5880,
           "other": 1347,
-          "recovered": 592242,
+          "recovered": 592514,
+          "tested": 23655410,
+          "vaccinated1": 18871986,
+          "vaccinated2": 5922576
+        }
+      },
+      "2021-10-03": {
+        "delta": {
+          "confirmed": 193,
+          "deceased": 1,
+          "recovered": 324
+        },
+        "delta7": {
+          "confirmed": 2286,
+          "deceased": 38,
+          "recovered": 2607,
+          "tested": 301591,
+          "vaccinated1": 721138,
+          "vaccinated2": 645822
+        },
+        "total": {
+          "confirmed": 602905,
+          "deceased": 5881,
+          "other": 1347,
+          "recovered": 592838,
           "tested": 23655410,
           "vaccinated1": 18871986,
           "vaccinated2": 5922576
@@ -136963,18 +136988,37 @@
           "2021-10-02": {
             "delta": {
               "confirmed": 246,
-              "deceased": 4
+              "deceased": 4,
+              "recovered": 272
             },
             "delta7": {
               "confirmed": 2289,
               "deceased": 42,
-              "recovered": 2318
+              "recovered": 2590
             },
             "total": {
               "confirmed": 602712,
               "deceased": 5880,
               "other": 1347,
-              "recovered": 592242
+              "recovered": 592514
+            }
+          },
+          "2021-10-03": {
+            "delta": {
+              "confirmed": 193,
+              "deceased": 1,
+              "recovered": 324
+            },
+            "delta7": {
+              "confirmed": 2286,
+              "deceased": 38,
+              "recovered": 2607
+            },
+            "total": {
+              "confirmed": 602905,
+              "deceased": 5881,
+              "other": 1347,
+              "recovered": 592838
             }
           }
         }
