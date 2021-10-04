@@ -4768,25 +4768,34 @@
     }
   },
   "HR": {
+    "delta": {
+      "confirmed": 9,
+      "recovered": 15,
+      "tested": 10765
+    },
     "delta21_14": {
       "confirmed": 87
     },
     "delta7": {
-      "confirmed": 90,
+      "confirmed": 99,
       "deceased": 64,
-      "recovered": 69,
-      "tested": 132202,
+      "recovered": 84,
+      "tested": 142967,
       "vaccinated1": 501084,
       "vaccinated2": 475890
     },
     "districts": {
       "Ambala": {
+        "delta": {
+          "confirmed": 1,
+          "recovered": 4
+        },
         "delta21_14": {
           "confirmed": 5
         },
         "delta7": {
-          "confirmed": 3,
-          "recovered": 4,
+          "confirmed": 4,
+          "recovered": 8,
           "vaccinated1": 11976,
           "vaccinated2": 23742
         },
@@ -4797,9 +4806,9 @@
           }
         },
         "total": {
-          "confirmed": 30143,
+          "confirmed": 30144,
           "deceased": 509,
-          "recovered": 29626,
+          "recovered": 29630,
           "tested": 206003,
           "vaccinated1": 854889,
           "vaccinated2": 475594
@@ -4904,12 +4913,16 @@
         }
       },
       "Gurugram": {
+        "delta": {
+          "confirmed": 6,
+          "recovered": 10
+        },
         "delta21_14": {
           "confirmed": 34
         },
         "delta7": {
-          "confirmed": 44,
-          "recovered": 28,
+          "confirmed": 50,
+          "recovered": 38,
           "vaccinated1": 30674,
           "vaccinated2": 91345
         },
@@ -4920,9 +4933,9 @@
           }
         },
         "total": {
-          "confirmed": 181247,
+          "confirmed": 181253,
           "deceased": 922,
-          "recovered": 180268,
+          "recovered": 180278,
           "tested": 742619,
           "vaccinated1": 2033210,
           "vaccinated2": 1136713
@@ -5043,12 +5056,15 @@
         }
       },
       "Kurukshetra": {
+        "delta": {
+          "recovered": 1
+        },
         "delta21_14": {
           "confirmed": 5
         },
         "delta7": {
           "confirmed": 4,
-          "recovered": 5,
+          "recovered": 6,
           "vaccinated1": 20737,
           "vaccinated2": 15599
         },
@@ -5061,7 +5077,7 @@
         "total": {
           "confirmed": 22143,
           "deceased": 357,
-          "recovered": 21781,
+          "recovered": 21782,
           "tested": 198881,
           "vaccinated1": 583959,
           "vaccinated2": 212628
@@ -5132,11 +5148,14 @@
         }
       },
       "Panchkula": {
+        "delta": {
+          "confirmed": 1
+        },
         "delta21_14": {
           "confirmed": 16
         },
         "delta7": {
-          "confirmed": 7,
+          "confirmed": 8,
           "recovered": 12,
           "vaccinated1": 6354,
           "vaccinated2": 12573
@@ -5148,7 +5167,7 @@
           }
         },
         "total": {
-          "confirmed": 30738,
+          "confirmed": 30739,
           "deceased": 377,
           "recovered": 30348,
           "tested": 118725,
@@ -5179,11 +5198,14 @@
         }
       },
       "Rewari": {
+        "delta": {
+          "confirmed": 1
+        },
         "delta21_14": {
           "confirmed": 2
         },
         "delta7": {
-          "confirmed": 6,
+          "confirmed": 7,
           "deceased": 12,
           "recovered": 2,
           "vaccinated1": 22946,
@@ -5196,7 +5218,7 @@
           }
         },
         "total": {
-          "confirmed": 20321,
+          "confirmed": 20322,
           "deceased": 221,
           "recovered": 20097,
           "tested": 151363,
@@ -5300,18 +5322,18 @@
     },
     "meta": {
       "date": "2021-10-04",
-      "last_updated": "2021-10-04T10:48:06+05:30",
+      "last_updated": "2021-10-04T21:57:42+05:30",
       "population": 28672000,
       "tested": {
-        "date": "2021-10-03",
-        "source": "http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily%20Bulletin%20of%20COVID%2019%20as%20on%2003-10-2021.pdf"
+        "date": "2021-10-04",
+        "source": "http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily%20Bulletin%20of%20COVID%2019%20as%20on%2004-10-2021.pdf"
       }
     },
     "total": {
-      "confirmed": 770915,
+      "confirmed": 770924,
       "deceased": 9874,
-      "recovered": 760755,
-      "tested": 12487626,
+      "recovered": 760770,
+      "tested": 12498391,
       "vaccinated1": 16840564,
       "vaccinated2": 6559654
     }
@@ -15801,26 +15823,26 @@
   },
   "TT": {
     "delta": {
-      "confirmed": 16683,
+      "confirmed": 16692,
       "deceased": 251,
       "other": 4,
-      "recovered": 28706
+      "recovered": 28721
     },
     "delta21_14": {
       "confirmed": 214729
     },
     "delta7": {
-      "confirmed": 157783,
+      "confirmed": 157792,
       "deceased": 1874,
       "other": 42,
-      "recovered": 193702,
+      "recovered": 193717,
       "tested": 8522369,
       "vaccinated1": 20200466,
       "vaccinated2": 17023759
     },
     "meta": {
       "date": "2021-10-04",
-      "last_updated": "2021-10-04T20:49:21+05:30",
+      "last_updated": "2021-10-04T21:57:42+05:30",
       "population": 1332900000,
       "tested": {
         "date": "2021-10-03",
@@ -15828,10 +15850,10 @@
       }
     },
     "total": {
-      "confirmed": 33850936,
+      "confirmed": 33850945,
       "deceased": 449280,
       "other": 13067,
-      "recovered": 33142372,
+      "recovered": 33142387,
       "tested": 574252400,
       "vaccinated1": 659815128,
       "vaccinated2": 248117733
