@@ -78,10 +78,10 @@ These endpoints should be avoided unless none of the above endpoints work for yo
 | :green_heart: | raw_data28 | <https://data.covid19india.org/csv/latest/raw_data28.csv> | May 18th to Jun 02nd   |
 | :green_heart: | raw_data29 | <https://data.covid19india.org/csv/latest/raw_data29.csv> | Jun 03rd to Jun 19th   |
 | :green_heart: | raw_data30 | <https://data.covid19india.org/csv/latest/raw_data30.csv> | Jun 20th to Jul 06th   |
-| :green_heart: | raw_data31 | <https://api.covid19india.org/csv/latest/raw_data31.csv> | Jul 07th to Jul 27th   |
-| :green_heart: | raw_data32 | <https://api.covid19india.org/csv/latest/raw_data32.csv> | Jul 28th to Aug 07th   |
-| :green_heart: | raw_data33 | <https://api.covid19india.org/csv/latest/raw_data33.csv> | Aug 08th to Sep 12th   |
-| :green_heart: | raw_data34 | <https://api.covid19india.org/csv/latest/raw_data34.csv> | Sep 13th onwards       |
+| :green_heart: | raw_data31 | <https://data.covid19india.org/csv/latest/raw_data31.csv> | Jul 07th to Jul 27th   |
+| :green_heart: | raw_data32 | <https://data.covid19india.org/csv/latest/raw_data32.csv> | Jul 28th to Aug 07th   |
+| :green_heart: | raw_data33 | <https://data.covid19india.org/csv/latest/raw_data33.csv> | Aug 08th to Sep 12th   |
+| :green_heart: | raw_data34 | <https://data.covid19india.org/csv/latest/raw_data34.csv> | Sep 13th onwards       |
 
 #### Note
 
