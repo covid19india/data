@@ -10,33 +10,33 @@ This is a comprehensive API that provides state and details as of the current da
 {
  "StateCode": {
   "delta": {
-   "confirmed": <deltaConfirmedForState>",
-   "deceased": <deltaDeceasedForState>",
-   "recovered": <deltaRecoveredForState>",
-   "vaccinated": <deltaVaccinatedForState>"
+   "confirmed": "<deltaConfirmedForState>",
+   "deceased": "<deltaDeceasedForState>",
+   "recovered": "<deltaRecoveredForState>",
+   "vaccinated": "<deltaVaccinatedForState>"
   },
   "delta7":{
-     "confirmed": <7DmaConfirmedForState>",
-     "deceased": <7DmaDeceasedForState>",
-     "recovered": <7DmaRecoveredForState>",
-     "vaccinated": <7DmaVaccinatedForState>""
+     "confirmed": "<7DmaConfirmedForState>",
+     "deceased": "<7DmaDeceasedForState>",
+     "recovered": "<7DmaRecoveredForState>",
+     "vaccinated": "<7DmaVaccinatedForState>""
   },
   "districts": {
    "District1": {
     "delta":{
-     "confirmed": <deltaConfirmedForDistrict>",
-     "deceased": <deltaDeceasedForDistrict>",
-     "recovered": <deltaRecoveredForDistrict>",
-     "vaccinated": <deltaVaccinatedForDistrict>"
+     "confirmed": "<deltaConfirmedForDistrict>",
+     "deceased": "<deltaDeceasedForDistrict>",
+     "recovered": "<deltaRecoveredForDistrict>",
+     "vaccinated": "<deltaVaccinatedForDistrict>"
     },
     "delta7":{
-     "confirmed": <7DmaConfirmedForDistrict>",
-     "deceased": <7DmaDeceasedForDistrict>",
-     "recovered": <7DmaRecoveredForDistrict>",
-     "vaccinated": <7DmaVaccinatedForDistrict>""
+     "confirmed": "<7DmaConfirmedForDistrict>",
+     "deceased": "<7DmaDeceasedForDistrict>",
+     "recovered": "<7DmaRecoveredForDistrict>",
+     "vaccinated": "<7DmaVaccinatedForDistrict>""
     },
     "meta": {
-     "population": <districtPopulation>,
+     "population": "<districtPopulation>,
      "tested": {
       "last_updated": "yyyy-mm-dd",
       "source": "uri",
@@ -44,11 +44,11 @@ This is a comprehensive API that provides state and details as of the current da
      "notes": "notesForDistrict"
     },
     "total": {
-     "confirmed": <cumulativeConfirmedNumberForDistrict>,
-     "deceased": <cumulativeDeceasedNumberForDistrict>,
-     "recovered": <cumulativeRecoveredNumberForDistrict>,
-     "tested": <cumulativeTestedNumberForDistrict>,
-     "vaccinated": <cumulativeVaccinatedNumberForDistrict>
+     "confirmed": "<cumulativeConfirmedNumberForDistrict>,
+     "deceased": "<cumulativeDeceasedNumberForDistrict>,
+     "recovered":" <cumulativeRecoveredNumberForDistrict>,
+     "tested": "<cumulativeTestedNumberForDistrict>,
+     "vaccinated": "<cumulativeVaccinatedNumberForDistrict>
     }
    },
    .
@@ -65,11 +65,11 @@ This is a comprehensive API that provides state and details as of the current da
    "notes": "notesForState"
   },
   "total": {
-   "confirmed": <cumulativeConfirmedNumberForState>,
-   "deceased": <cumulativeDeceasedNumberForState>,
-   "recovered": <cumulativeRecoveredNumberForState>,
-   "tested": <cumulativeConfirmedNumberForState>,
-   "vaccinated": <cumulativeVaccinatedNumberForState>
+   "confirmed":" <cumulativeConfirmedNumberForState>,
+   "deceased": "<cumulativeDeceasedNumberForState>,
+   "recovered": "<cumulativeRecoveredNumberForState>,
+   "tested": "<cumulativeConfirmedNumberForState>,
+   "vaccinated": "<cumulativeVaccinatedNumberForState>
   }
  },
  .
