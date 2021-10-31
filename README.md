@@ -2,15 +2,14 @@
 
 ## Announcement
 
-**We have stopped capturing testing data at a district level. Please check the status of the API endpoints below.**
+**We are porting the data repository from [covid19india.org API](https://github.com/covid19india/data) to [covid19bharat.org API](https://github.com/DataKind-BLR/covid19bharat_data)**
 
-1. As of 13th August our [API](https://github.com/covid19bharat/api) repository and api.covid19bharat.org have been deprecated. We redirect api.covid19bharat.org to data.covid19bharat.org 
-2. As of 13th August, all json endpoints except v4 endpoints have been deprecated. Please use the csv endpoints or refer to v4 endpoints 
+1. As of 31st October 2021, [data.covid19india.org](https://data.covid19india.org/) will stop updating the data. We will keep the data flowing on [data.covid19bharat.org](https://data.covid19bharat.org/) 
  
 ### Files available
 
 - Aggregated sheets provide aggregated data at the district/state levels in csv format. 
-- V4 json endpoints. These are the json apis that are used by the website to show all the statistics on the site. These can be used by developers and analysts who have knowledge of json parsing (recommended approach). All our v4 endpoints are actively developed and in use since this serves the frontend view [Documentation for the same](https://api.covid19bharat.org/documentation).
+- V4 json endpoints. These are the json apis that are used by the website to show all the statistics on the site. These can be used by developers and analysts who have knowledge of json parsing (recommended approach). All our v4 endpoints are actively developed and in use since this serves the frontend view [Documentation for the same](https://data.covid19bharat.org/documentation).
 - Latest data from the google sheet (10-20 minutes delayed) is available through the `latest` end-point. These are present under the `raw files` section below. (Not recommended since the number of files is huge and there is no additional information present in these as compared to the above mentioned endpoints.)
 
 ### V4 JSON endpoints 
@@ -78,11 +77,11 @@ These endpoints should be avoided unless none of the above endpoints work for yo
 | :green_heart: | raw_data28 | <https://data.covid19bharat.org/csv/latest/raw_data28.csv> | May 18th to Jun 02nd   |
 | :green_heart: | raw_data29 | <https://data.covid19bharat.org/csv/latest/raw_data29.csv> | Jun 03rd to Jun 19th   |
 | :green_heart: | raw_data30 | <https://data.covid19bharat.org/csv/latest/raw_data30.csv> | Jun 20th to Jul 06th   |
-| :green_heart: | raw_data31 | <https://api.covid19bharat.org/csv/latest/raw_data31.csv> | Jul 07th to Jul 27th   |
-| :green_heart: | raw_data32 | <https://api.covid19bharat.org/csv/latest/raw_data32.csv> | Jul 28th to Aug 07th   |
-| :green_heart: | raw_data33 | <https://api.covid19bharat.org/csv/latest/raw_data33.csv> | Aug 08th to Sep 12th   |
-| :green_heart: | raw_data34 | <https://api.covid19bharat.org/csv/latest/raw_data34.csv> | Sep 13th to Oct 09th   |
-| :green_heart: | raw_data35 | <https://api.covid19bharat.org/csv/latest/raw_data35.csv> | Oct 10th onwards       |
+| :green_heart: | raw_data31 | <https://data.covid19bharat.org/csv/latest/raw_data31.csv> | Jul 07th to Jul 27th   |
+| :green_heart: | raw_data32 | <https://data.covid19bharat.org/csv/latest/raw_data32.csv> | Jul 28th to Aug 07th   |
+| :green_heart: | raw_data33 | <https://data.covid19bharat.org/csv/latest/raw_data33.csv> | Aug 08th to Sep 12th   |
+| :green_heart: | raw_data34 | <https://data.covid19bharat.org/csv/latest/raw_data34.csv> | Sep 13th to Oct 09th   |
+| :green_heart: | raw_data35 | <https://data.covid19bharat.org/csv/latest/raw_data35.csv> | Oct 10th onwards       |
 
 #### Note
 
@@ -97,7 +96,7 @@ These endpoints should be avoided unless none of the above endpoints work for yo
 
 A more detailed note of the columns present in the data may be found in the json documentation
 
-- [Documentation](https://api.covid19bharat.org/documentation)
+- [Documentation](https://data.covid19bharat.org/documentation)
 
 
 ....................................................
