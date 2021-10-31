@@ -1,7 +1,7 @@
 State,Confirmed,Recovered,Deaths,Active,Last_Updated_Time,Migrated_Other,State_code,Delta_Confirmed,Delta_Recovered,Delta_Deaths,State_Notes
-Total,34272705,33648187,458219,153103,13/08/2021 23:27:22,13196,TT,0,0,0,
+Total,34275261,33650429,458248,153387,13/08/2021 23:27:22,13197,TT,2556,2242,29,
 Andaman and Nicobar Islands,7651,7518,129,4,13/08/2021 23:27:22,0,AN,0,0,0,
-Andhra Pradesh,2066065,2047047,14369,4649,13/08/2021 23:27:22,0,AP,0,0,0,
+Andhra Pradesh,2066450,2047722,14373,4355,13/08/2021 23:27:22,0,AP,385,675,4,
 Arunachal Pradesh,55154,54765,280,109,13/08/2021 23:27:22,0,AR,0,0,0,[July 25]: All numbers corresponding to Papum Pare and Captial Complex are tracked under Papum Pare district.
 Assam,610433,600738,5996,2352,13/08/2021 23:27:22,1347,AS,0,0,0,[Jan 1]: 1347 cases i.e Covid +'tive patients dead for other reasons have been deducted fom active count.
 Bihar,726090,716381,9661,47,13/08/2021 23:27:22,1,BR,0,0,0,[June 9] : 3951 deceased cases have been reported in the bulletin after reconciliation of records by the authorities
@@ -9,7 +9,7 @@ Chandigarh,65346,64492,820,34,13/08/2021 23:27:22,0,CH,0,0,0,
 Chhattisgarh,1006020,992127,13576,317,13/08/2021 23:27:22,0,CT,0,0,0,
 Dadra and Nagar Haveli and Daman and Diu,10681,10643,4,3,13/08/2021 23:27:22,31,DN,0,0,0,
 Delhi,1439825,1414385,25091,349,13/08/2021 23:27:22,0,DL,0,0,0,"[July 14]: Value for the total tests conducted has been reduced by 97008 in the state bulletin. Reason given : ""Reconciled with ICMR figures"". We have made the same change."
-Goa,178085,174339,3364,382,13/08/2021 23:27:22,0,GA,0,0,0,
+Goa,178108,174392,3364,352,13/08/2021 23:27:22,0,GA,23,53,0,
 Gujarat,826557,816260,10089,208,13/08/2021 23:27:22,0,GJ,0,0,0,
 Haryana,771241,761058,10049,134,13/08/2021 23:27:22,0,HR,0,0,0,
 Himachal Pradesh,224021,218212,3737,2056,13/08/2021 23:27:22,16,HP,0,0,0,
@@ -27,15 +27,15 @@ Maharashtra,6609906,6449186,140196,16905,13/08/2021 23:27:22,3619,MH,0,0,0,"[Dec
 [Jun 16] : 1328 deceased cases have been retroactively added to MH bulletin.
 [Jun 20] : 69 deceased cases have been reduced based on state bulletin.
 [Sep 9 2021]: 15066 positive cases and 15793 discharged cases have been reduced from state total based on reconciliation (as mentioned in the bulletin)"
-Manipur,123668,121040,1920,708,13/08/2021 23:27:22,0,MN,0,0,0,[Dec 14]:824 out of 980 recovered cases are backdated.
-Meghalaya,83605,81695,1449,461,13/08/2021 23:27:22,0,ML,0,0,0,
-Mizoram,120780,114002,430,6348,13/08/2021 23:27:22,0,MZ,0,0,0,
-Nagaland,31831,29883,684,222,13/08/2021 23:27:22,1042,NL,0,0,0,
-Odisha,1040969,1028697,8382,3890,13/08/2021 23:27:22,0,OR,0,0,0,[July 12th] :20 non-covid deaths reported in state dashboard are included in the deceased count
-Puducherry,127975,125681,1857,437,13/08/2021 23:27:22,0,PY,0,0,0,
+Manipur,123731,121102,1921,708,13/08/2021 23:27:22,0,MN,63,62,1,[Dec 14]:824 out of 980 recovered cases are backdated.
+Meghalaya,83627,81746,1450,431,13/08/2021 23:27:22,0,ML,22,51,1,
+Mizoram,121359,114414,432,6513,13/08/2021 23:27:22,0,MZ,579,412,2,
+Nagaland,31842,29904,685,210,13/08/2021 23:27:22,1043,NL,11,21,1,
+Odisha,1041457,1028697,8386,4374,13/08/2021 23:27:22,0,OR,488,0,4,[July 12th] :20 non-covid deaths reported in state dashboard are included in the deceased count
+Puducherry,128013,125726,1857,430,13/08/2021 23:27:22,0,PY,38,45,0,
 Punjab,602375,585566,16558,251,13/08/2021 23:27:22,0,PB,0,0,0,
 Rajasthan,954427,945441,8954,32,13/08/2021 23:27:22,0,RJ,0,0,0,
-Sikkim,31958,31055,395,183,13/08/2021 23:27:22,325,SK,0,0,0,
+Sikkim,31979,31063,396,195,13/08/2021 23:27:22,325,SK,21,8,1,
 State Unassigned,0,0,0,0,13/08/2021 23:27:22,0,UN,0,0,0,MoHFW website reports that these are the 'cases that are being reassigned to states'. 
 Tamil Nadu,2701614,2653832,36097,11685,13/08/2021 23:27:22,0,TN,0,0,0,"[June 29 2021]: TN has introduced a new district ""Mayiladuthurai"" in the bulletin and has assigned cases from Nagapattinam to the new district.
 [July 22]: 444 backdated deceased entries added to Chennai in TN bulletin.
@@ -43,9 +43,9 @@ Tamil Nadu,2701614,2653832,36097,11685,13/08/2021 23:27:22,0,TN,0,0,0,"[June 29 
 1 patient died after turning negative for infection in Chengalpattu.
 These cases have been added to TN deceased tally"
 Telangana,671342,663315,3955,4072,13/08/2021 23:27:22,0,TG,0,0,0,"[July 27] : Telangana bulletin for the previous day is released on the next day. We will add the cases for Telangana against the date of release, as that is the convention that we are following for other states."
-Tripura,84456,83464,813,116,13/08/2021 23:27:22,63,TR,0,0,0,"[Aug 4]: Tripura bulletin for the previous day is released on the next day. We will add the cases for Tripura against the date of release, as that is the convention that we are following for other states."
+Tripura,84468,83466,813,126,13/08/2021 23:27:22,63,TR,12,2,0,"[Aug 4]: Tripura bulletin for the previous day is released on the next day. We will add the cases for Tripura against the date of release, as that is the convention that we are following for other states."
 Uttar Pradesh,1710152,1687145,22900,107,13/08/2021 23:27:22,0,UP,0,0,0,"[Jan 1]:As no bulletin was provided for 31'st Dec'20,its count has been combined with 1st Jan'21
 [Jan 9]:Due to reconcillation there are 1286 cases."
 Uttarakhand,343891,330186,7400,155,13/08/2021 23:27:22,6150,UT,0,0,0,"[Oct 30]: Metric of capturing the testing data has switched to ""Samples Tested"" from ""Samples Collected""
 [Jun 30th'21]:145 confirmed cases and 218 deceased cases added of previous days after reconciliation with district and ICMR portal"
-West Bengal,1591994,1564558,19126,8310,13/08/2021 23:27:22,0,WB,0,0,0,
+West Bengal,1592908,1565471,19141,8296,13/08/2021 23:27:22,0,WB,914,913,15,
