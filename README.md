@@ -1,4 +1,4 @@
-# COVID19-India API
+# COVID19-Bharat API
 
 ## Announcement
 
