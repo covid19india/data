@@ -1,12 +1,12 @@
 name: Sheet to Json Workflow
 
 on:
-  schedule:
-    # every 20 minutes the job will run
-    - cron: "*/20 * * * *"
-  push:
-    branches:
-      - main
+#   schedule:
+#     # every 20 minutes the job will run
+#     - cron: "*/20 * * * *"
+#   push:
+#     branches:
+#       - main
   # repository_dispatch:
   #   types: [my-event]
 
