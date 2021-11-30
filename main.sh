@@ -14,6 +14,7 @@ echo "check 2"
 git config user.name "$GITHUB_ACTOR"
 git config user.email "${GITHUB_ACTOR}@bots.github.com"
 
+echo "check 2.5"
 
 git checkout "$gh_pages_branch"
 
