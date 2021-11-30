@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "main.sh start"
 set -eu
+echo "check"
 
 repo_uri="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 remote_name="origin"
