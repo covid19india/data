@@ -162,7 +162,28 @@ const SHEETS_V33 = [["raw_data33", "0"]];
 
 const SHEETS_V34 = [["raw_data34", "0"]];
 
-const SHEETS_V35 = [["raw_data35", "0"]];
+const SHEETS_V35 = [
+  ["raw_data35", "0"],
+  ["state_wise", "1896310216"],
+  ["state_wise_daily", "1395461826"],
+  ["sources_list", "704389477"],
+  ["district_wise", "227379561"],
+  ["statewise_tested_numbers_data", "486127050"],
+  ["case_time_series", "387368559"],
+  ["tested_numbers_icmr_data", "2143634168"],
+  // ["travel_history", "1532084277"],
+  ["district_list", "1207378023"],
+  // ['district_testing', '458610673'],
+  // ['icmr_labs_statewise','847799380'],
+  // ['icmr_rtpcr_tests_daily','1032515506'],
+  // ['vaccine_doses_statewise','1601004575'],
+  ["cowin_vaccine_data_statewise", "1770661428"],
+  ["cowin_vaccine_data_districtwise", "382746758"],
+  ["vaccine_doses_statewise_v2", "1097927328"],
+  ["states_meta", "230208536"],
+  ["districts_meta", "756427239"],
+];
+
 
 const SHEETS_V36 = [
   ["raw_data36", "0"],
