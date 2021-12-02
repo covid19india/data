@@ -271,5 +271,5 @@ async function sheetsToCSV(sheets, pubId) {
   // await sheetsToCSV(SHEETS_V33, PUBLISHED_SHEET_ID_33);
 //   await sheetsToCSV(SHEETS_V34, PUBLISHED_SHEET_ID_34);
   await sheetsToCSV(SHEETS_V35, PUBLISHED_SHEET_ID_35);
-  await sheetsToCSV(SHEETS_V35, PUBLISHED_SHEET_ID_36);
+  await sheetsToCSV(SHEETS_V36, PUBLISHED_SHEET_ID_36);
 })();
