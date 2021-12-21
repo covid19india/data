@@ -23,8 +23,8 @@
 
 #### Aggregated Sheets (CSV)
 
-| Status        | Sheet Name                    | Link to CSV                                                                 | Description                                                                                     |
-| ------------- | ----------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| | Sheet Name                    | Link to CSV                                                                 | Description                                                                                     |
+| --- | ----------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | :green_heart: | case_time_series              | <https://data.covid19bharat.org/csv/latest/case_time_series.csv>              | India level timeseries for Confirmed, Recovered and Deceased cases
 | :green_heart: | states                        | <https://data.covid19bharat.org/csv/latest/states.csv>                        | Statewise timeseries of Confirmed, Recovered and Deceased numbers.   
 | :green_heart: | districts                        | <https://data.covid19bharat.org/csv/latest/districts.csv>                  | Districtwise timeseries of Confirmed, Recovered and Deceased numbers.                           |
