@@ -84,6 +84,7 @@ const PUBLISHED_SHEET_ID_34 =
 const PUBLISHED_SHEET_ID_35 =
   "2PACX-1vT-ZBr4mrHY2PNiX_eG7BnOfBfLNbRNfvvgYlSZCfpVcJg-cGkB3X_yDaxDRDotgu7EOB_3j5e_msGv";
 const PUBLISHED_SHEET_ID_36 = "2PACX-1vTrt_V4yW0jd91chhz9BJZOgJtFrsaZEa_gPlrFfQToBuuNDDkn01w0K0GdnjCdklyzFz84A1hFbSUN"
+const PUBLISHED_SHEET_ID_37 = "2PACX-1vT1nasvyPHE2gVXu14urA6KHXuUzsRXtS3Qr6JORpa5Anm2TEr5KxJv11EvcE6UAx0Cj2Ja4j6IWR7g"
   
 const SHEETS_V1 = [
   ["raw_data1", "0"],
@@ -162,8 +163,10 @@ const SHEETS_V33 = [["raw_data33", "0"]];
 
 const SHEETS_V34 = [["raw_data34", "0"]];
 
-const SHEETS_V35 = [
-  ["raw_data35", "0"],
+const SHEETS_V35 = [["raw_data35", "0"]];
+
+const SHEETS_V36 = [
+  ["raw_data36", "0"],
   ["state_wise", "1896310216"],
   ["state_wise_daily", "1395461826"],
   ["sources_list", "704389477"],
@@ -184,9 +187,8 @@ const SHEETS_V35 = [
   ["districts_meta", "756427239"],
 ];
 
-
-const SHEETS_V36 = [
-  ["raw_data36", "0"],
+const SHEETS_V37 = [
+  ["raw_data37", "0"],
   ["state_wise", "1896310216"],
   ["state_wise_daily", "1395461826"],
   ["sources_list", "704389477"],
@@ -270,6 +272,7 @@ async function sheetsToCSV(sheets, pubId) {
   // await sheetsToCSV(SHEETS_V32, PUBLISHED_SHEET_ID_32);
   // await sheetsToCSV(SHEETS_V33, PUBLISHED_SHEET_ID_33);
 //   await sheetsToCSV(SHEETS_V34, PUBLISHED_SHEET_ID_34);
-  await sheetsToCSV(SHEETS_V35, PUBLISHED_SHEET_ID_35);
+//  await sheetsToCSV(SHEETS_V35, PUBLISHED_SHEET_ID_35);
   await sheetsToCSV(SHEETS_V36, PUBLISHED_SHEET_ID_36);
+  await sheetsToCSV(SHEETS_V37, PUBLISHED_SHEET_ID_37);
 })();
