@@ -30,7 +30,7 @@ git config user.name "$GITHUB_ACTOR"
 git config user.email "${GITHUB_ACTOR}@bots.github.com"
 
 # Checkout gh pages branch
-git checkout "$gh_pages_branch"
+git checkout "${GH_PAGES_BRANCH}"
 
 DIR="tmp"
 if [ -d "$DIR" ]; then
@@ -62,7 +62,7 @@ python3 src/generate_activity_log.py
 # node src/sanity_check.js # need rewrite with new json
 
 # Switch to GH Pages Branch again
-git checkout "$gh_pages_branch"
+git checkout "${GH_PAGES_BRANCH}"
 
 # Remove the old files from tmp directory
 rm tmp/data-old.min.json
