@@ -29,15 +29,24 @@ repo_uri="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
 git config user.name "$GITHUB_ACTOR"
 git config user.email "${GITHUB_ACTOR}@bots.github.com"
 
-# Checkout gh pages branch
-git checkout "${GH_PAGES_BRANCH}"
+# Download all necessary files from repo branches in to code directory
+if [ -d "${CODE_DIR}" ]; then
+  echo "${CODE_DIR} directory exists"
+else
+  echo "Creating new directory named ${CODE_DIR}..."
+  mkdir -p ${CODE_DIR} && cd $_
+fi
 
-DIR="tmp"
-if [ -d "$DIR" ]; then
+git clone -b ${GH_PAGES_BRANCH} $repo_uri
+
+# # Checkout gh pages branch
+# git checkout "${GH_PAGES_BRANCH}"
+
+if [ -d "${TEMP_DIR}" ]; then
   echo "tmp directory exists"
 else
-  echo "Creating new directory named ${DIR}..."
-  mkdir tmp
+  echo "Creating new directory named ${TEMP_DIR}..."
+  mkdir ${TEMP_DIR}
 fi
 
 # Copying files to respective folders
