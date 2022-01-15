@@ -41,36 +41,36 @@ else
 fi
 
 # Copying files to respective folders
-# cp -r ./updatelog ./tmp
-# cp -r ./csv ./tmp
-# cp v4/min/data.min.json ./tmp/data-old.min.json
-# cp ./csv/latest/state_wise.csv ./tmp/state_wise_prev
+cp -r ./updatelog ./tmp
+cp -r ./csv ./tmp
+cp v4/min/data.min.json ./tmp/data-old.min.json
+cp ./csv/latest/state_wise.csv ./tmp/state_wise_prev
 
 # Checkout Main branch
 git checkout "${MAIN_BRANCH}"
 
 # Copying the documentation files to temporary folder
-# cp README.md tmp/
-# cp -r documentation/ tmp/
+cp README.md tmp/
+cp -r documentation/ tmp/
 
 # Convert the google sheet data to csv using Node.js script
-# node src/sheets-to-csv.js
+node src/sheets-to-csv.js
 
 # Invoke the Python Parser 4 script to generate the json data for api calls
-# python3 src/parser_v4.py
-# python3 src/generate_activity_log.py
+python3 src/parser_v4.py
+python3 src/generate_activity_log.py
 # node src/sanity_check.js # need rewrite with new json
 
 # Switch to GH Pages Branch again
-# git checkout "$gh_pages_branch"
+git checkout "$gh_pages_branch"
 
 # Remove the old files from tmp directory
-# rm tmp/data-old.min.json
-# rm tmp/state_wise_prev
+rm tmp/data-old.min.json
+rm tmp/state_wise_prev
 
 # Copy everything from tmp directory to root folder and remove tmp directory
-# cp -r tmp/* .
-# rm -r tmp/
+cp -r tmp/* .
+rm -r tmp/
 
 # Add all the files to the repo and commit
 git add .
