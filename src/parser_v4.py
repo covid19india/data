@@ -105,6 +105,8 @@ ICMR_DATA_DICT = {
 VACCINATION_DATA_DICT = {
     "vaccinated1": "First Dose Administered",
     "vaccinated2": "Second Dose Administered",
+    "precautionary": "Precautionary Dose Administered",
+
 }
 ALL_STATISTICS = [*RAW_DATA_MAP.values(), *ICMR_DATA_DICT.keys()]
 # CSV Headers

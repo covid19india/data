@@ -94,15 +94,10 @@ git add .
 set +e  # Grep succeeds with nonzero exit codes to show results.
 
 # Commit the changes if there are new modifications or files.
-if git status | grep 'new file\|modified'
-then
-    set -e
-    git commit -am "data updated on - $(date)"
-    git remote set-url "${ORIGIN_BRANCH}" "$repo_uri" # includes access token
-    git push --force-with-lease "${ORIGIN_BRANCH}" "${GH_PAGES_BRANCH}"
-else
-    set -e
-    echo "No changes since last run"
+if git status | grep 'new file\|modified' then
+  git commit -am "data updated on - $(date)"
+  git remote set-url "${ORIGIN_BRANCH}" "$repo_uri" # includes access token
+  git push --force-with-lease "${ORIGIN_BRANCH}" "${GH_PAGES_BRANCH}"
 fi
 
 rm -rf ../../${CODE_DIR}/
