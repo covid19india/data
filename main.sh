@@ -36,9 +36,11 @@ else
   mkdir -p ${CODE_DIR} && cd $_
 fi
 
+<<'###'
 # Chekout repo branches in respective folders
 git clone --depth 1 -b ${GH_PAGES_BRANCH} $repo_uri ${GH_PAGES_BRANCH}
 git clone --depth 1 -b ${MAIN_BRANCH} $repo_uri ${MAIN_BRANCH}
+
 
 if [ -d "${TEMP_DIR}" ]; then
   echo "${TEMP_DIR} directory exists"
@@ -46,6 +48,7 @@ else
   echo "Creating new directory named ${TEMP_DIR}..."
   mkdir ${TEMP_DIR}
 fi
+
 
 # Verify the existence of the directory
 if [ -d "${GH_PAGES_BRANCH}" ]; then
@@ -87,7 +90,9 @@ rm -r ${TEMP_DIR}/
 
 cd ${GH_PAGES_BRANCH}
 
-if [ '{MODE}' == 'dev' ]; then
+###
+
+if [ "${MODE}" == 'dev' ]; then
   git config --global user.name "${GITHUB_NAME}"
   git config --global user.email "${GITHUB_ACTOR}"
 
@@ -101,13 +106,17 @@ else
 fi
 
 
+
 # Commit the changes if there are new modifications or files.
-if git status | grep 'new file\|modified' then
+if git status | grep 'new file\|modified'
+then
   echo "Prod mode: Committing all changes"
   git commit -am "data updated on - $(date)"
   git remote set-url "${ORIGIN_BRANCH}" "$repo_uri" # includes access token
   git push --force-with-lease "${ORIGIN_BRANCH}" "${GH_PAGES_BRANCH}"
   rm -rf ../../${CODE_DIR}/
+fi
+
 
 
 echo "main.sh end"
