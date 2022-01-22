@@ -107,8 +107,6 @@ if git status | grep 'new file\|modified' then
   git remote set-url "${ORIGIN_BRANCH}" "$repo_uri" # includes access token
   git push --force-with-lease "${ORIGIN_BRANCH}" "${GH_PAGES_BRANCH}"
   rm -rf ../../${CODE_DIR}/
-else 
-  echo "Dev mode: No changes to commit"
-fi
+
 
 echo "main.sh end"
