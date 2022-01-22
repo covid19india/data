@@ -13,11 +13,12 @@ sudo chmod 755 main.sh
 In order to commit the data back to the github repo, you will need a personal access token
 that can be generated from github.com/settings/tokens
 
-make a copy of the env files and add your personal token in the environment variables to be
-used across the project
+make a copy of the env.example file and add your personal token in the environment variables to be
+used across the project and renamed the file to .env
 '''
 
-#!/bin/bash
+#!/usr/bin/env bash
+source log4bash.sh
 
 # Set the environment variables from the .env file using setenv.sh script
 source setenv.sh
