@@ -13,12 +13,7 @@ from dotenv import load_dotenv
 import traceback
 
 load_dotenv()
-
-if os.getenv('MODE') == 'prod':
-  ROOT_DIR = Path("tmp")
-else:
-  ROOT_DIR = Path("../code/tmp")
-
+ROOT_DIR = Path("../code/tmp")
 
 
 # Set logging level
