@@ -26,12 +26,6 @@ set -eu
 # Setting the repo path and branche
 repo_uri="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
-# git config user.name "$GITHUB_ACTOR"
-# git config user.email "${GITHUB_ACTOR}@bots.github.com"
-
-git config --global user.name "${GITHUB_NAME}"
-git config --global user.email "${GITHUB_ACTOR}"
-
 # Download all necessary files from repo branches in to code directory
 if [ -d "${CODE_DIR}" ]; then
   echo "${CODE_DIR} directory exists"
@@ -93,11 +87,16 @@ rm -r ${TEMP_DIR}/
 cd ${GH_PAGES_BRANCH}
 
 if [ '{MODE}' == 'dev' ]; then
+  git config --global user.name "${GITHUB_NAME}"
+  git config --global user.email "${GITHUB_ACTOR}"
+
   # Add all the files to the repo and commit
   git add .
   set +e  # Grep succeeds with nonzero exit codes to show results.
 else
-    echo "Developer branch. So not committing..."
+  git config user.name "$GITHUB_ACTOR"
+  git config user.email "${GITHUB_ACTOR}@bots.github.com"
+  echo "Developer branch. So not committing..."
 fi
 
 
