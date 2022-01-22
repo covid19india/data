@@ -97,7 +97,7 @@ if [ '{MODE}' == 'dev' ]; then
 else
   git config user.name "$GITHUB_ACTOR"
   git config user.email "${GITHUB_ACTOR}@bots.github.com"
-  echo "Developer branch. So not committing..."
+  echo "Dev mode: So not committing..."
 fi
 
 
@@ -107,6 +107,8 @@ if git status | grep 'new file\|modified' then
   git remote set-url "${ORIGIN_BRANCH}" "$repo_uri" # includes access token
   git push --force-with-lease "${ORIGIN_BRANCH}" "${GH_PAGES_BRANCH}"
   rm -rf ../../${CODE_DIR}/
+else 
+  echo "Dev mode: No changes to commit"
 fi
 
 echo "main.sh end"
