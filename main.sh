@@ -23,6 +23,17 @@ source log4bash.sh
 source setenv.sh
 set -eu
 
+# Set to dev branch by default
+active_branch=dev
+
+if [ "${MODE}" == 'prod' ]; then
+  echo "Production mode: Be careful with this mode."
+  active_branch=${MAIN_BRANCH}
+else
+  echo "Developer mode: You can play around."
+    active_branch=${DEV_BRANCH}
+fi
+
 # Setting the repo path and branche
 repo_uri="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
@@ -37,7 +48,7 @@ fi
 
 # Chekout repo branches in respective folders
 git clone --depth 1 -b ${GH_PAGES_BRANCH} $repo_uri ${GH_PAGES_BRANCH}
-git clone --depth 1 -b ${MAIN_BRANCH} $repo_uri ${MAIN_BRANCH}
+git clone --depth 1 -b $active_branch $repo_uri $active_branch
 
 if [ -d "${TEMP_DIR}" ]; then
   echo "${TEMP_DIR} directory exists"
@@ -59,21 +70,21 @@ else
 fi
 
 # Verify the existence of the directory
-if [ -d "${MAIN_BRANCH}" ]; then
-  echo "${MAIN_BRANCH} directory exists"
+if [ -d "$active_branch" ]; then
+  echo "$active_branch directory exists"
   # Copying files to respective folders
-  cp ./${MAIN_BRANCH}/README.md ${TEMP_DIR}/
-  cp -r ./${MAIN_BRANCH}/documentation/ ${TEMP_DIR}/
+  cp ./$active_branch/README.md ${TEMP_DIR}/
+  cp -r ./$active_branch/documentation/ ${TEMP_DIR}/
 else
-  echo "${MAIN_BRANCH} not found. Exiting..."
+  echo "$active_branch not found. Exiting..."
 fi
 
 # Convert the google sheet data to csv using Node.js script
-node ./${MAIN_BRANCH}/src/sheets-to-csv.js
+node ./$active_branch/src/sheets-to-csv.js
 
 # Invoke the Python Parser 4 script to generate the json data for api calls
-python3 ./${MAIN_BRANCH}/src/parser_v4.py
-python3 ./${MAIN_BRANCH}/src/generate_activity_log.py
+python3 ./$active_branch/src/parser_v4.py
+python3 ./$active_branch/src/generate_activity_log.py
 # node src/sanity_check.js # need rewrite with new json
 
 # # Remove the old files from tmp directory
@@ -103,8 +114,8 @@ if git status | grep 'new file\|modified'
 then
   echo "Prod mode: Committing all changes"
   git commit -am "data updated on - $(date)"
-  git remote set-url "${ORIGIN_BRANCH}" "$repo_uri" # includes access token
-  git push --force-with-lease "${ORIGIN_BRANCH}" "${GH_PAGES_BRANCH}"
+  git remote set-url "$active_branch" "$repo_uri" # includes access token
+  git push --force-with-lease "$active_branch" "${GH_PAGES_BRANCH}"
   rm -rf ../../${CODE_DIR}/
 fi
 
