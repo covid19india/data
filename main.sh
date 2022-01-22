@@ -26,8 +26,11 @@ set -eu
 # Setting the repo path and branche
 repo_uri="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
-git config user.name "$GITHUB_ACTOR"
-git config user.email "${GITHUB_ACTOR}@bots.github.com"
+# git config user.name "$GITHUB_ACTOR"
+# git config user.email "${GITHUB_ACTOR}@bots.github.com"
+
+git config --global user.name "$GITHUB_ACTOR"
+git config --global user.email ""
 
 # Download all necessary files from repo branches in to code directory
 if [ -d "${CODE_DIR}" ]; then
@@ -89,17 +92,21 @@ rm -r ${TEMP_DIR}/
 
 cd ${GH_PAGES_BRANCH}
 
-# # Add all the files to the repo and commit
-git add .
-set +e  # Grep succeeds with nonzero exit codes to show results.
+if [ '{MODE}' == 'dev' ]; then
+  # Add all the files to the repo and commit
+  git add .
+  set +e  # Grep succeeds with nonzero exit codes to show results.
+else
+    echo "Developer branch. So not committing..."
+fi
+
 
 # Commit the changes if there are new modifications or files.
 if git status | grep 'new file\|modified' then
   git commit -am "data updated on - $(date)"
   git remote set-url "${ORIGIN_BRANCH}" "$repo_uri" # includes access token
   git push --force-with-lease "${ORIGIN_BRANCH}" "${GH_PAGES_BRANCH}"
+  rm -rf ../../${CODE_DIR}/
 fi
-
-rm -rf ../../${CODE_DIR}/
 
 echo "main.sh end"
