@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 import traceback
 
 load_dotenv()
-ROOT_DIR = Path("../code")
+ROOT_DIR = Path("code")
 
 
 # Set logging level
