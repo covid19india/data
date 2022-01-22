@@ -43,17 +43,31 @@ if [ -d "${CODE_DIR}" ]; then
   cd ${CODE_DIR}
 else
   echo "Creating new directory named ${CODE_DIR}..."
+  rm -r ${CODE_DIR}
   mkdir -p ${CODE_DIR} && cd $_
 fi
 
+
 # Chekout repo branches in respective folders
-git clone --depth 1 -b ${GH_PAGES_BRANCH} $repo_uri ${GH_PAGES_BRANCH}
-git clone --depth 1 -b $active_branch $repo_uri $active_branch
+if [ -d "${GH_PAGES_BRANCH}" ]; 
+then
+  git checkout ${GH_PAGES_BRANCH}
+else
+  git clone --depth 1 -b ${GH_PAGES_BRANCH} $repo_uri ${GH_PAGES_BRANCH}
+fi
+
+if [ -d "${GH_PAGES_BRANCH}" ]; 
+then
+  git checkout $active_branch
+else
+  git clone --depth 1 -b $active_branch $repo_uri $active_branch
+fi
 
 if [ -d "${TEMP_DIR}" ]; then
   echo "${TEMP_DIR} directory exists"
 else
   echo "Creating new directory named ${TEMP_DIR}..."
+  rm -r ${TEMP_DIR}
   mkdir ${TEMP_DIR}
 fi
 
