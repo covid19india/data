@@ -31,7 +31,7 @@ if [ "${MODE}" == 'prod' ]; then
   active_branch=${MAIN_BRANCH}
 else
   echo "Developer mode: You can play around."
-    active_branch=${DEV_BRANCH}
+  active_branch=${DEV_BRANCH}
 fi
 
 # Setting the repo path and branche
@@ -47,18 +47,22 @@ else
   mkdir -p ${CODE_DIR} && cd $_
 fi
 
-
 # Chekout repo branches in respective folders
 if [ -d "${GH_PAGES_BRANCH}" ]; 
 then
+  cd ${GH_PAGES_BRANCH}
   git checkout ${GH_PAGES_BRANCH}
+  cd ..
 else
   git clone --depth 1 -b ${GH_PAGES_BRANCH} $repo_uri ${GH_PAGES_BRANCH}
 fi
 
+
 if [ -d "${GH_PAGES_BRANCH}" ]; 
 then
+  cd $active_branch
   git checkout $active_branch
+  cd ..
 else
   git clone --depth 1 -b $active_branch $repo_uri $active_branch
 fi
