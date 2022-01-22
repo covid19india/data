@@ -29,8 +29,8 @@ repo_uri="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
 # git config user.name "$GITHUB_ACTOR"
 # git config user.email "${GITHUB_ACTOR}@bots.github.com"
 
-git config --global user.name "$GITHUB_ACTOR"
-git config --global user.email ""
+git config --global user.name "${GITHUB_NAME}"
+git config --global user.email "${GITHUB_ACTOR}"
 
 # Download all necessary files from repo branches in to code directory
 if [ -d "${CODE_DIR}" ]; then

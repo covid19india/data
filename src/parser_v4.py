@@ -8,6 +8,17 @@ import yaml
 from collections import defaultdict, OrderedDict
 from datetime import datetime, timedelta
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+if os.getenv('MODE') == 'prod':
+  ROOT_DIR = Path("tmp")
+else:
+  ROOT_DIR = Path("../code/tmp")
+
+
 
 # Set logging level
 logging.basicConfig(stream=sys.stdout,
@@ -25,7 +36,6 @@ MIN_DATE = "2020-01-01"
 
 # Input/Output root directory
 # ROOT_DIR = Path("tmp")
-ROOT_DIR = Path("code/tmp")
 CSV_DIR = ROOT_DIR / "csv" / "latest"
 # State codes to be used as API keys
 STATE_META_DATA = CSV_DIR / "states_meta.csv"
@@ -660,6 +670,9 @@ def parse_district_vaccination(reader):
         # print (str(column_keys))
 
         if key in column_keys:
+          print("----Key-----")
+          print (str(key))
+          print (str(column_keys))
           count_str = row[j2 + column_keys[key]].strip()
           try:
             count = int(count_str)
