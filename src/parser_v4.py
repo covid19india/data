@@ -382,40 +382,41 @@ def parse_icmr(reader):
   for j, entry in enumerate(reader):
     for statistic, statistic_dict in ICMR_DATA_DICT.items():
       key = statistic_dict["key"]
-      count_str = entry[key].strip()
+      if key in entry:
+        count_str = entry[key].strip()
 
-      if not count_str:
-        continue
-
-      try:
-        fdate = datetime.strptime(entry["Tested As Of"].strip(), "%d/%m/%Y")
-        date = datetime.strftime(fdate, "%Y-%m-%d")
-        if date < MIN_DATE or date > INDIA_DATE:
-          # Entries from future dates will be ignored and logged
-          logging.warning(
-              f"[L{j + 2}] [Future/past date: {entry['Tested As Of']}]")
+        if not count_str:
           continue
-      except ValueError:
-        # Bad timestamp
-        logging.warning(f"[L{j + 2}] [Bad date: {entry['Tested As Of']}]")
-        continue
 
-      try:
-        count = int(count_str)
-      except ValueError:
-        logging.warning(
-            f"[L{j + 2}] [{entry['Tested As Of']}] [Bad {key}: {entry[key]}]")
-        continue
+        try:
+          fdate = datetime.strptime(entry["Tested As Of"].strip(), "%d/%m/%Y")
+          date = datetime.strftime(fdate, "%Y-%m-%d")
+          if date < MIN_DATE or date > INDIA_DATE:
+            # Entries from future dates will be ignored and logged
+            logging.warning(
+                f"[L{j + 2}] [Future/past date: {entry['Tested As Of']}]")
+            continue
+        except ValueError:
+          # Bad timestamp
+          logging.warning(f"[L{j + 2}] [Bad date: {entry['Tested As Of']}]")
+          continue
 
-      if count:
-        data[date]["TT"]["total"][statistic] = count
+        try:
+          count = int(count_str)
+        except ValueError:
+          logging.warning(
+              f"[L{j + 2}] [{entry['Tested As Of']}] [Bad {key}: {entry[key]}]")
+          continue
 
-        # Add source/last updated
-        meta_key = ("vaccinated" if statistic
-                    in {"vaccinated1", "vaccinated2"} else statistic)
-        data[date]["TT"]["meta"][meta_key]["source"] = entry[
-            statistic_dict["source"]].strip()
-        data[date]["TT"]["meta"][meta_key]["date"] = date
+        if count:
+          data[date]["TT"]["total"][statistic] = count
+
+          # Add source/last updated
+          meta_key = ("vaccinated" if statistic
+                      in {"vaccinated1", "vaccinated2"} else statistic)
+          data[date]["TT"]["meta"][meta_key]["source"] = entry[
+              statistic_dict["source"]].strip()
+          data[date]["TT"]["meta"][meta_key]["date"] = date
 
 
 def parse_state_test(reader):
