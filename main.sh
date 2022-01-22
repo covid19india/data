@@ -67,7 +67,6 @@ if [ -d "${TEMP_DIR}" ]; then
   echo "${TEMP_DIR} directory exists"
 else
   echo "Creating new directory named ${TEMP_DIR}..."
-  rm -r ${TEMP_DIR}
   mkdir ${TEMP_DIR}
 fi
 
