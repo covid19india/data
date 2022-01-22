@@ -16,7 +16,6 @@ that can be generated from github.com/settings/tokens
 make a copy of the env.example file and add your personal token in the environment variables to be
 used across the project and renamed the file to .env
 '''
-
 #!/usr/bin/env bash
 source log4bash.sh
 
@@ -40,14 +39,12 @@ fi
 git clone --depth 1 -b ${GH_PAGES_BRANCH} $repo_uri ${GH_PAGES_BRANCH}
 git clone --depth 1 -b ${MAIN_BRANCH} $repo_uri ${MAIN_BRANCH}
 
-
 if [ -d "${TEMP_DIR}" ]; then
   echo "${TEMP_DIR} directory exists"
 else
   echo "Creating new directory named ${TEMP_DIR}..."
   mkdir ${TEMP_DIR}
 fi
-
 
 # Verify the existence of the directory
 if [ -d "${GH_PAGES_BRANCH}" ]; then
@@ -89,20 +86,17 @@ rm -r ${TEMP_DIR}/
 
 cd ${GH_PAGES_BRANCH}
 
-if [ "${MODE}" == 'dev' ]; then
-  git config --global user.name "${GITHUB_NAME}"
-  git config --global user.email "${GITHUB_ACTOR}"
-
+if [ "${MODE}" == 'prod' ]; then
+  git config user.name "$GITHUB_ACTOR"
+  git config user.email "${GITHUB_ACTOR}@bots.github.com"
   # Add all the files to the repo and commit
   git add .
   set +e  # Grep succeeds with nonzero exit codes to show results.
 else
-  git config user.name "$GITHUB_ACTOR"
-  git config user.email "${GITHUB_ACTOR}@bots.github.com"
+  git config --global user.name "${GITHUB_NAME}"
+  git config --global user.email "${GITHUB_ACTOR}"
   echo "Dev mode: So not committing..."
 fi
-
-
 
 # Commit the changes if there are new modifications or files.
 if git status | grep 'new file\|modified'
@@ -114,6 +108,4 @@ then
   rm -rf ../../${CODE_DIR}/
 fi
 
-
-
-echo "main.sh end"
+echo "Script successfully completed"
