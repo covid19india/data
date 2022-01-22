@@ -36,7 +36,6 @@ else
   mkdir -p ${CODE_DIR} && cd $_
 fi
 
-<<'###'
 # Chekout repo branches in respective folders
 git clone --depth 1 -b ${GH_PAGES_BRANCH} $repo_uri ${GH_PAGES_BRANCH}
 git clone --depth 1 -b ${MAIN_BRANCH} $repo_uri ${MAIN_BRANCH}
@@ -89,8 +88,6 @@ cp -r ${TEMP_DIR}/* ${GH_PAGES_BRANCH}
 rm -r ${TEMP_DIR}/
 
 cd ${GH_PAGES_BRANCH}
-
-###
 
 if [ "${MODE}" == 'dev' ]; then
   git config --global user.name "${GITHUB_NAME}"

@@ -657,23 +657,14 @@ def parse_district_vaccination(reader):
     for j1, j2 in enumerate(range(len(row_keys), len(row), len(column_keys))):
       # Date from header
       date = dates[j1]
-      # print("----Date-----")
-      # print(str(date))
       if not date:
         continue
 
       for statistic in VACCINATION_DATA_DICT:
-        # print("----Statistic-----")
-        # print (str(statistic))
         key = VACCINATION_DATA_DICT[statistic].lower()
-        # print("----Key-----")
-        # print (str(key))
-        # print (str(column_keys))
 
+        # To handle the empty precautionary column in the data before 15-Jan-2022
         if key in column_keys:
-          print("----Key-----")
-          print (str(key))
-          print (str(column_keys))
           count_str = row[j2 + column_keys[key]].strip()
           try:
             count = int(count_str)
