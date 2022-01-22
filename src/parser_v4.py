@@ -108,6 +108,10 @@ ICMR_DATA_DICT = {
         "key": "Second Dose Administered",
         "source": "Source 4"
     },
+    "precautionary": {
+        "key": "Precautionary Dose Administered",
+        "source": "Source 4"
+    },
 }
 VACCINATION_DATA_DICT = {
     "vaccinated1": "First Dose Administered",
