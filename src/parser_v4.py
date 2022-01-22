@@ -24,7 +24,8 @@ INDIA_DATE = datetime.strftime(INDIA_DATETIME, "%Y-%m-%d")
 MIN_DATE = "2020-01-01"
 
 # Input/Output root directory
-ROOT_DIR = Path("tmp")
+# ROOT_DIR = Path("tmp")
+ROOT_DIR = Path("code/tmp")
 CSV_DIR = ROOT_DIR / "csv" / "latest"
 # State codes to be used as API keys
 STATE_META_DATA = CSV_DIR / "states_meta.csv"
@@ -645,27 +646,36 @@ def parse_district_vaccination(reader):
     for j1, j2 in enumerate(range(len(row_keys), len(row), len(column_keys))):
       # Date from header
       date = dates[j1]
+      # print("----Date-----")
+      # print(str(date))
       if not date:
         continue
 
       for statistic in VACCINATION_DATA_DICT:
+        # print("----Statistic-----")
+        # print (str(statistic))
         key = VACCINATION_DATA_DICT[statistic].lower()
-        count_str = row[j2 + column_keys[key]].strip()
-        try:
-          count = int(count_str)
-        except ValueError:
-          if count_str:
-            logging.warning(
-                f"[L{i + 3} {column_str(j2 + column_keys[key] + 1)}] [{state}: {district}] Bad {key}: {row[j2 + column_keys[key]]}"
-            )
-          continue
+        # print("----Key-----")
+        # print (str(key))
+        # print (str(column_keys))
 
-        if count:
-          inc(
-              data[date][state]["districts"][district]["total"],
-              statistic,
-              count,
-          )
+        if key in column_keys:
+          count_str = row[j2 + column_keys[key]].strip()
+          try:
+            count = int(count_str)
+          except ValueError:
+            if count_str:
+              logging.warning(
+                  f"[L{i + 3} {column_str(j2 + column_keys[key] + 1)}] [{state}: {district}] Bad {key}: {row[j2 + column_keys[key]]}"
+              )
+            continue
+
+          if count:
+            inc(
+                data[date][state]["districts"][district]["total"],
+                statistic,
+                count,
+            )
 
 
 def contains(raw_data, keys):
@@ -1351,7 +1361,8 @@ if __name__ == "__main__":
   #  with open((OUTPUT_MIN_DIR / fn).with_suffix(".min.json"), "w") as f:
   #  json.dump(data, f, separators=(",", ":"), sort_keys=True)
 
-  # Split data and dump separate json for each date
+
+  # Split data and dump separate json for each date in v4 folder
   for i, date in enumerate(sorted(data)):
     curr_data = data[date]
     if i < len(data) - 1:
