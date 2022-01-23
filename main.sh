@@ -43,7 +43,6 @@ if [ -d "${CODE_DIR}" ]; then
   cd ${CODE_DIR}
 else
   echo "Creating new directory named ${CODE_DIR}..."
-  rm -r ${CODE_DIR}
   mkdir -p ${CODE_DIR} && cd $_
 fi
 
