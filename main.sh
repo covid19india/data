@@ -109,11 +109,13 @@ rm ${TEMP_DIR}/state_wise_prev
 
 # # Copy everything from tmp directory to root folder and remove tmp directory
 cp -r ${TEMP_DIR}/* ${GH_PAGES_BRANCH}
-rm -r ${TEMP_DIR}/
 
 cd ${GH_PAGES_BRANCH}
 
 if [ "${MODE}" == 'prod' ]; then
+  # Housekeeping
+  rm -r ${TEMP_DIR}/
+  
   git config user.name "$GITHUB_ACTOR"
   git config user.email "${GITHUB_ACTOR}@bots.github.com"
   # Add all the files to the repo and commit
@@ -134,5 +136,7 @@ then
   git push --force-with-lease "$active_branch" "${GH_PAGES_BRANCH}"
   rm -rf ../../${CODE_DIR}/
 fi
+
+
 
 echo "Script successfully completed"
