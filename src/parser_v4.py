@@ -64,7 +64,7 @@ STATE_WISE = CSV_DIR / "state_wise.csv"
 DISTRICT_WISE = CSV_DIR / "district_wise.csv"
 
 # API outputs
-OUTPUT_DIR = ROOT_DIR / "v4"
+OUTPUT_DIR = ROOT_DIR / "tmp" / "v4"
 OUTPUT_MIN_DIR = OUTPUT_DIR / "min"
 OUTPUT_DATA_PREFIX = "data"
 OUTPUT_TIMESERIES_PREFIX = "timeseries"

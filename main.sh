@@ -103,7 +103,7 @@ python3 ./$active_branch/src/parser_v4.py
 python3 ./$active_branch/src/generate_activity_log.py
 # node src/sanity_check.js # need rewrite with new json
 
-# # Remove the old files from tmp directory
+# Remove the old files from tmp directory
 rm ${TEMP_DIR}/data-old.min.json
 rm ${TEMP_DIR}/state_wise_prev
 
