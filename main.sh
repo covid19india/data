@@ -132,7 +132,7 @@ if git status | grep 'new file\|modified'
 then
   echo "Prod mode: Committing all changes"
   git commit -am "data updated on - $(date)"
-  git remote set-url "$active_branch" "$repo_uri" # includes access token
+  git remote set-url "${ORIGIN_BRANCH}" "$repo_uri" # includes access token
   git push --force-with-lease "$active_branch" "${GH_PAGES_BRANCH}"
   rm -rf ../../${CODE_DIR}/
 fi
