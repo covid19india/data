@@ -54,7 +54,7 @@ DISTRICT_TEST_DATA = CSV_DIR / "district_testing.csv"
 STATE_VACCINATION_DATA = CSV_DIR / "vaccine_doses_statewise_v2.csv"
 DISTRICT_VACCINATION_DATA = CSV_DIR / "cowin_vaccine_data_districtwise.csv"
 # Old data.json
-DATA_OLD = ROOT_DIR / "data-old.min.json"
+DATA_OLD = ROOT_DIR / "tmp" / "data-old.min.json"
 print(DATA_OLD)
 
 ## For adding metadata
