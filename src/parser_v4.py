@@ -15,7 +15,7 @@ from pathlib import Path
 
 load_dotenv()
 
-ROOT_DIR = Path(__file__).parents[1]
+ROOT_DIR = Path(__file__).parents[2]
 
 # Set logging level
 logging.basicConfig(stream=sys.stdout,
