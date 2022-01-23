@@ -16,6 +16,7 @@ from pathlib import Path
 load_dotenv()
 
 ROOT_DIR = Path(__file__).parents[2]
+print(ROOT_DIR)
 
 # Set logging level
 logging.basicConfig(stream=sys.stdout,
@@ -34,10 +35,8 @@ MIN_DATE = "2020-01-01"
 # Input/Output root directory
 # ROOT_DIR = Path("tmp")
 CSV_DIR = ROOT_DIR / "tmp" / "csv" / "latest"
-print(CSV_DIR)
 # State codes to be used as API keys
 STATE_META_DATA = CSV_DIR / "states_meta.csv"
-print(STATE_META_DATA)
 DISTRICT_META_DATA = CSV_DIR / "districts_meta.csv"
 # Geographical districts of India
 DISTRICT_LIST = CSV_DIR / "district_wise.csv"
@@ -56,6 +55,7 @@ STATE_VACCINATION_DATA = CSV_DIR / "vaccine_doses_statewise_v2.csv"
 DISTRICT_VACCINATION_DATA = CSV_DIR / "cowin_vaccine_data_districtwise.csv"
 # Old data.json
 DATA_OLD = ROOT_DIR / "data-old.min.json"
+print(DATA_OLD)
 
 ## For adding metadata
 # For state notes and last updated
