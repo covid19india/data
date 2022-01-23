@@ -109,13 +109,12 @@ rm ${TEMP_DIR}/state_wise_prev
 
 # # Copy everything from tmp directory to root folder and remove tmp directory
 cp -r ${TEMP_DIR}/* ${GH_PAGES_BRANCH}
+rm -r ${TEMP_DIR}
 
 cd ${GH_PAGES_BRANCH}
 
 if [ "${MODE}" == 'prod' ]; then
-  # Housekeeping
-  rm -r ${TEMP_DIR}/
-  
+  # Housekeeping  
   git config user.name "$GITHUB_ACTOR"
   git config user.email "${GITHUB_ACTOR}@bots.github.com"
   # Add all the files to the repo and commit
@@ -133,7 +132,7 @@ then
   echo "Prod mode: Committing all changes"
   git commit -am "data updated on - $(date)"
   git remote set-url "${ORIGIN_BRANCH}" "$repo_uri" # includes access token
-  git push --force-with-lease "$active_branch" "${GH_PAGES_BRANCH}"
+  git push --force-with-lease "${ORIGIN_BRANCH}" "${GH_PAGES_BRANCH}"
   rm -rf ../../${CODE_DIR}/
 fi
 
