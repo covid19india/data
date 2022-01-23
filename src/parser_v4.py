@@ -13,8 +13,8 @@ from dotenv import load_dotenv
 import traceback
 
 load_dotenv()
-ROOT_DIR = Path("code/tmp")
 
+ROOT_DIR = Path("code")
 
 # Set logging level
 logging.basicConfig(stream=sys.stdout,
@@ -32,7 +32,7 @@ MIN_DATE = "2020-01-01"
 
 # Input/Output root directory
 # ROOT_DIR = Path("tmp")
-CSV_DIR = ROOT_DIR / "csv" / "latest"
+CSV_DIR = ROOT_DIR / "tmp" / "csv" / "latest"
 # State codes to be used as API keys
 STATE_META_DATA = CSV_DIR / "states_meta.csv"
 DISTRICT_META_DATA = CSV_DIR / "districts_meta.csv"
