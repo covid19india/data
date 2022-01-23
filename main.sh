@@ -99,8 +99,8 @@ fi
 node ./$active_branch/src/sheets-to-csv.js
 
 # Invoke the Python Parser 4 script to generate the json data for api calls
-python3 src/parser_v4.py
-python3 src/generate_activity_log.py
+python3 ./$active_branch/src/parser_v4.py
+python3 ./$active_branch/src/generate_activity_log.py
 # node src/sanity_check.js # need rewrite with new json
 
 # # Remove the old files from tmp directory
@@ -115,7 +115,7 @@ cd ${GH_PAGES_BRANCH}
 if [ "${MODE}" == 'prod' ]; then
   # Housekeeping
   rm -r ${TEMP_DIR}/
-
+  
   git config user.name "$GITHUB_ACTOR"
   git config user.email "${GITHUB_ACTOR}@bots.github.com"
   # Add all the files to the repo and commit
