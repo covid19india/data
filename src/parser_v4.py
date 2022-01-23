@@ -11,10 +11,11 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import traceback
+from pathlib import Path
 
 load_dotenv()
 
-ROOT_DIR = Path("../../code")
+ROOT_DIR = Path(__file__).parents[1]
 
 # Set logging level
 logging.basicConfig(stream=sys.stdout,
