@@ -14,7 +14,7 @@ import traceback
 
 load_dotenv()
 
-ROOT_DIR = Path("../../code")
+ROOT_DIR = Path("./code")
 
 # Set logging level
 logging.basicConfig(stream=sys.stdout,
