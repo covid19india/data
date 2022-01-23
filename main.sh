@@ -57,7 +57,7 @@ else
 fi
 
 
-if [ -d "${GH_PAGES_BRANCH}" ]; 
+if [ -d "${active_branch}" ]; 
 then
   cd $active_branch
   git checkout $active_branch
